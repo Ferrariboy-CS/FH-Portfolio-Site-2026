@@ -1,0 +1,169 @@
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.nav{
+    height: calc(var(--header-height) + 1.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav__logo,
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+/* Make nav logo and links larger and clearer */
+.nav__logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--title-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav__logo:hover,
+.nav__logo:focus {
+  color: var(--title-color-dark, #6c63ff);
+  text-shadow: 0 2px 8px rgba(108,99,255,0.12);
+  transform: scale(1.07);
+  outline: none;
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--title-color);
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+  padding: 0.18em 0.4em;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--title-color-dark, #6c63ff);
+  text-shadow: 0 2px 8px rgba(108,99,255,0.12);
+  transform: scale(1.07);
+  outline: none;
+}
+
+.nav__icon {
+  font-size: 1.1em;
+  margin-bottom: 2px;
+}
+
+.nav__icon,
+.nav__close,
+.nav__toggle {
+    display: none;
+}
+
+/* Active link */
+
+.active-link,
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--title-color-dark);
+  text-shadow: 0 2px 8px rgba(108,99,255,0.18);
+  outline: none;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 768px) {
+    .header{
+        top: initial;
+        bottom: 0;
+    }
+
+    .nav {
+        height: var(--header-height);
+    }
+
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+    /* Show Menu */
+    .show-menu{
+        bottom: 0;
+    }
+    .nav__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .nav__icon{
+        font-size: 1.2rem;
+    }
+    
+    .nav__close {
+        position: absolute;
+        right: 1.3rem;
+        bottom: .5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--title-color);
+    }
+    
+    .nav__icon,
+    .nav__close,
+    .nav__toggle{
+        display: block;
+    }
+
+    .nav__close:hover {
+        color: var(--title-color-dark);
+        
+    }
+
+    .nav__toggle{
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    .nav__logo {
+        font-size: 1.1rem;
+    }
+    .nav__link {
+        font-size: 1rem;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .nav__menu {
+        padding: 2rem 0.25rem 4rem;
+    
+    }
+    .nav__list{
+        column-gap: 0;
+    }
+}

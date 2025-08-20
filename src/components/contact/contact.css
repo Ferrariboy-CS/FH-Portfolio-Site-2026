@@ -1,0 +1,206 @@
+/* Layout-only styles to keep your original colors intact */
+.container { max-width: 1200px; margin-inline: auto; padding-inline: 24px; }
+
+.contact { padding: 48px 0 64px; position: relative; }
+
+.contact__container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Two-column layout */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: flex-start;
+  background: #fafafa;
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px 8px;
+  }
+}
+
+/* Left: Contact Info Cards */
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.contact__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.meta__item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  min-width: 220px;
+}
+
+.meta__icon {
+  font-size: 1.7rem;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.meta__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.meta__detail {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.meta__action {
+  color: #222;
+  font-size: 0.98rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
+}
+.meta__action:hover,
+.meta__action:focus {
+  color: var(--title-color-dark, #6c63ff);
+  text-shadow: 0 2px 8px rgba(108,99,255,0.12);
+  transform: scale(1.07);
+  outline: none;
+  text-decoration: none;
+}
+
+/* Right: Contact Form */
+.contact__form-wrapper {
+  width: 100%;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+}
+
+@media (max-width: 600px) {
+  .contact__form-wrapper {
+    padding: 18px 6px;
+  }
+}
+
+.contact__form { width: 100%; }
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.form__row--two {
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 720px) {
+  .form__row--two { grid-template-columns: 1fr; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field--full { grid-column: 1 / -1; }
+.field__label { font-weight: 500; font-size: 1rem; }
+
+/* Do NOT set colors/backgrounds to preserve your original theme */
+.field__control {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+.field__control:focus {
+  border: 1.5px solid #007bff;
+  background: #fff;
+}
+.field__control--textarea { min-height: 120px; resize: vertical; }
+
+/* Actions (no color styles) */
+.form__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+.form__status { font-size: 0.9rem; }
+.form__status.ok { opacity: 0.9; color: #2e7d32; }
+.form__status.err { opacity: 0.9; color: #c62828; }
+
+.button.button--flex {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button.button--flex:hover {
+  background: #444;
+}
+
+/* Scroll-to-top button (keeps your existing button styles if any) */
+.toTop {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .contact__grid {
+    padding: 8px 0;
+  }
+  .meta__item {
+    min-width: unset;
+    padding: 16px 10px;
+  }
+}
