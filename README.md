@@ -1,57 +1,66 @@
-<h2 align="center">
-  Festus Helao Shatipamba<br/>
-  <a href="https://festushelaoshatipamba.com/" target="_blank">Portfolio</a>
-</h2>
+<h1 align="center">
+  Festus Helao Shatipamba
+</h1>
 
-<div align="center">
-  <img alt="Portfolio Demo" src="./src/assets/demo.png" />
-</div>
+<p align="center">
+  <a href="https://festushelaoshatipamba.com/" target="_blank">
+    <img src="/Screenshot.png" alt="Portfolio Demo" width="80%" />
+  </a>
+</p>
 
-<br/>
+<p align="center">
+  <a href="https://festushelaoshatipamba.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Live Demo" />
+  </a>
+  <a href="https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge" alt="GitHub Repo" />
+  </a>
+</p>
+
+---
 
 ## 📌 About
 
-This is my personal **portfolio website** showcasing my **projects, resume, skills, certifications, and achievements**.  
-It is designed to be **modern, responsive, and fast**, giving visitors a clear overview of my work and professional background.  
+Welcome to my **personal portfolio website**! This project showcases my **projects, resume, skills, certifications, and achievements** in a modern, responsive, and interactive layout.  
+It provides visitors with a clear overview of my professional work and background.  
 
-<br/>
+---
 
 ## 🛠️ Built With
 
-This project was developed using the following technologies:
+- ⚛️ **React + TypeScript (Vite)**
+- 🎨 **Tailwind CSS & Custom CSS**
+- 🌗 **Light/Dark Mode Toggle**
+- 🔗 **React Router**
+- 📦 **NPM** for package management
+- 🎬 **Framer Motion** for smooth animations
 
-- ⚛️ React + TypeScript (Vite)
-- 🎨 Tailwind CSS & custom CSS
-- 🌗 Light/Dark mode toggle
-- 🔗 React Router (for navigation)
-- 📦 NPM (for dependencies)
-
-<br/>
+---
 
 ## ✨ Features
 
 - 📖 **Multi-Page Layout** – Home, About, Skills, Portfolio, Services, Experience, Awards, Education & Certifications, Contact  
 - 📱 **Fully Responsive** – Optimized for desktop, tablet, and mobile  
-- 🎬 **Smooth Animations** – Clean UI transitions  
-- 🌗 **Light/Dark Mode** – Toggle theme support  
-- 🖼️ **Skills Grid** – Icons and logos for technologies I use  
-- 📬 **Contact Section** – Direct links to my social media  
+- 🎬 **Smooth Animations** – Elegant UI transitions with Framer Motion  
+- 🌗 **Light/Dark Mode** – Theme toggle for user preference  
+- 🖼️ **Skills Grid** – Icons and logos for all technologies I use  
+- 📬 **Contact Section** – Direct links to social media profiles  
 
-<br/>
+---
 
 ## 🚀 Getting Started
 
-Clone this repository. Make sure you have **[Node.js](https://nodejs.org/)** and **Git** installed globally on your machine.
+Follow these steps to run the project locally:
 
 ```bash
-# Clone the repo
-git clone https://github.com/your-username/portfolio.git
+# Clone the repository
+git clone https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025.git
 
-# Navigate into project folder
-cd portfolio
+# Navigate into the project folder
+cd FH-Shatipamba-React-Portfolio-2025
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start the development server (Vite)
 npm run dev
