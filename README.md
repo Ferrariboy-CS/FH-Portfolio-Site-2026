@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://festushelaoshatipamba.com/" target="_blank">
-    <img src="public/preview.png" alt="Portfolio Demo" width="80%"/>
+    <img src="public/Screenshot.png" alt="Portfolio Demo" width="80%"/>
   </a>
 </div>
 
