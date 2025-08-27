@@ -2,11 +2,6 @@
   Festus Helao Shatipamba
 </h1>
 
-<p align="center">
-  <a href="https://festushelaoshatipamba.com/" target="_blank">
-    <img src="/Screenshot.png" alt="Portfolio Demo" width="80%" />
-  </a>
-</p>
 
 <p align="center">
   <a href="https://festushelaoshatipamba.com/" target="_blank">
