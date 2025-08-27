@@ -4,7 +4,7 @@
 </h2>
 
 <div align="center">
-  <img alt="Portfolio Demo" src="./src/assets/demo.png" />
+  <img alt="Portfolio Demo" href="https://festushelaoshatipamba.com/" target="_blank"/>
 </div>
 
 <br/>
