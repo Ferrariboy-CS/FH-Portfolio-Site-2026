@@ -4,7 +4,9 @@
 </h2>
 
 <div align="center">
-  <img alt="Portfolio Demo" href="https://festushelaoshatipamba.com/" target="_blank"/>
+  <a href="https://festushelaoshatipamba.com/" target="_blank">
+    <img src="public/preview.png" alt="Portfolio Demo" width="80%"/>
+  </a>
 </div>
 
 <br/>
@@ -20,11 +22,11 @@ It is designed to be **modern, responsive, and fast**, giving visitors a clear o
 
 This project was developed using the following technologies:
 
-- ⚛️ React + TypeScript (Vite)
-- 🎨 Tailwind CSS & custom CSS
-- 🌗 Light/Dark mode toggle
-- 🔗 React Router (for navigation)
-- 📦 NPM (for dependencies)
+- ⚛️ **React + TypeScript (Vite)**
+- 🎨 **Tailwind CSS & custom CSS**
+- 🌗 **Light/Dark mode toggle**
+- 🔗 **React Router** for navigation
+- 📦 **NPM** for package management
 
 <br/>
 
@@ -32,7 +34,7 @@ This project was developed using the following technologies:
 
 - 📖 **Multi-Page Layout** – Home, About, Skills, Portfolio, Services, Experience, Awards, Education & Certifications, Contact  
 - 📱 **Fully Responsive** – Optimized for desktop, tablet, and mobile  
-- 🎬 **Smooth Animations** – Clean UI transitions  
+- 🎬 **Smooth Animations** – Clean UI transitions with Framer Motion  
 - 🌗 **Light/Dark Mode** – Toggle theme support  
 - 🖼️ **Skills Grid** – Icons and logos for technologies I use  
 - 📬 **Contact Section** – Direct links to my social media  
@@ -41,17 +43,17 @@ This project was developed using the following technologies:
 
 ## 🚀 Getting Started
 
-Clone this repository. Make sure you have **[Node.js](https://nodejs.org/)** and **Git** installed globally on your machine.
+To run this project locally, make sure you have **[Node.js](https://nodejs.org/)** and **Git** installed globally on your machine.
 
 ```bash
-# Clone the repo
-git clone https://github.com/your-username/portfolio.git
+# Clone the repository
+git clone https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025.git
 
-# Navigate into project folder
-cd portfolio
+# Navigate into the project folder
+cd FH-Shatipamba-React-Portfolio-2025
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start the development server
 npm run dev
