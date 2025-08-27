@@ -4,8 +4,8 @@ import { FiMail, FiArrowUp } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = "service_wlpabqi";
-const TEMPLATE_ID = "template_2yze5ff";
+const SERVICE_ID = "service_nzjh9un";
+const TEMPLATE_ID = "template_aohjt1o";
 const PUBLIC_KEY  = "jLiKmgBt3Y2VmXhYX";
 
 const Contact = () => {
@@ -68,9 +68,16 @@ const Contact = () => {
             <div className="form__row">
               <label className="field field--full">
                 <span className="field__label">Project</span>
-                <textarea className="field__control field__control--textarea" name="project" placeholder="Talk to me" rows="6" required />
+                <textarea
+                  className="field__control field__control--textarea"
+                  name="message" // <-- changed from "project" to "message"
+                  placeholder="Talk to me"
+                  rows="6"
+                  required
+                />
               </label>
             </div>
+            <input type="hidden" name="time" value={new Date().toLocaleString()} />
             <div className="form__actions">
               <button
                 type="submit"

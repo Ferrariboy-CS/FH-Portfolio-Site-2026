@@ -156,9 +156,12 @@
 /* Actions (no color styles) */
 .form__actions {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
   gap: 12px;
   margin-top: 6px;
+  width: 100%;
+  text-align: center;
 }
 .form__status { font-size: 0.9rem; }
 .form__status.ok { opacity: 0.9; color: #2e7d32; }
@@ -182,6 +185,14 @@
   background: #444;
 }
 
+/* Optional: Make button full width on mobile */
+@media (max-width: 600px) {
+  .button.button--flex {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Scroll-to-top button (keeps your existing button styles if any) */
 .toTop {
   position: fixed;
@@ -192,6 +203,15 @@
   display: grid;
   place-items: center;
   border-radius: 10px;
+  z-index: 1002; /* Ensure above nav */
+}
+
+/* Move toTop button up on mobile to avoid nav overlap */
+@media (max-width: 600px) {
+  .toTop {
+    bottom: 80px; /* Adjust this value to match your mobile nav height */
+    right: 16px;
+  }
 }
 
 /* Responsive tweaks */
@@ -199,8 +219,21 @@
   .contact__grid {
     padding: 8px 0;
   }
+  .contact__meta {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
   .meta__item {
-    min-width: unset;
+    min-width: 90vw;
+    max-width: 98vw;
+    width: 100%;
     padding: 16px 10px;
+    align-items: center;
+    text-align: center;
+  }
+  .contact__form-wrapper {
+    padding: 12px 2px;
   }
 }

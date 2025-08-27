@@ -2,8 +2,6 @@ import React from 'react';
 import './skills.css';
 
 const skills = [
-  { name: 'C', img: '/skills/letter-c (1).png' },
-  { name: 'C++', img: '/skills/c++.png' },
   { name: 'C#', img: '/skills/c-sharp.png' },
   { name: 'Java', img: '/skills/java.png' },
   { name: 'Python', img: '/skills/python.png' },

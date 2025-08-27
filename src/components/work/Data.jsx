@@ -26,17 +26,6 @@ export const projectsData = [
     description: "Showcasing Robert Andreas's work, events, pictures, and book publications.",
     tech: ['WordPress', 'Custom CSS', 'JavaScript'],
     link: 'https://chiefrobertandreas.com/',
-  },
-  {
-    id: 3,
-    images: [
-      '/portfolio/seestore.png'
-    ],
-    title: 'SEE Store',
-    category: 'Web',
-    description: "An e-commerce store for the organization's merchandise.",
-    tech: ['WooCommerce', 'WordPress', 'Custom CSS'],
-    link: 'https://store.see.org.na/',
   }
 ];
 
