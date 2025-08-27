@@ -4,6 +4,12 @@
 
 <p align="center">
   <a href="https://festushelaoshatipamba.com/" target="_blank">
+    <img src="/Screenshot.png" alt="Portfolio Demo" width="80%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://festushelaoshatipamba.com/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Live Demo" />
   </a>
   <a href="https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025" target="_blank">
@@ -17,18 +23,20 @@
 
 Welcome to my **personal portfolio website**! This project showcases my **projects, resume, skills, certifications, and achievements** in a modern, responsive, and interactive layout.  
 It provides visitors with a clear overview of my professional work and background.  
+Welcome to my **personal portfolio website**! This project showcases my **projects, resume, skills, certifications, and achievements** in a modern, responsive, and interactive layout.  
+It provides visitors with a clear overview of my professional work and background.  
 
+---
 ---
 
 ## 🛠️ Built With
 
 - ⚛️ **React + TypeScript (Vite)**
-- 🎨 **Tailwind CSS & custom CSS**
-- 🌗 **Light/Dark mode toggle**
-- 🔗 **React Router** for navigation
+- 🎨 **Tailwind CSS & Custom CSS**
+- 🌗 **Light/Dark Mode Toggle**
+- 🔗 **React Router**
 - 📦 **NPM** for package management
-
-<br/>
+- 🎬 **Framer Motion** for smooth animations
 
 ---
 
@@ -40,17 +48,27 @@ It provides visitors with a clear overview of my professional work and backgroun
 - 🌗 **Light/Dark Mode** – Toggle theme support  
 - 🖼️ **Skills Grid** – Icons and logos for technologies I use  
 - 📬 **Contact Section** – Direct links to my social media  
+- 🎬 **Smooth Animations** – Elegant UI transitions with Framer Motion  
+- 🌗 **Light/Dark Mode** – Theme toggle for user preference  
+- 🖼️ **Skills Grid** – Icons and logos for all technologies I use  
+- 📬 **Contact Section** – Direct links to social media profiles  
 
+---
 ---
 
 ## 🚀 Getting Started
 
 To run this project locally, make sure you have **[Node.js](https://nodejs.org/)** and **Git** installed globally on your machine.
+Follow these steps to run the project locally:
 
 ```bash
 # Clone the repository
 git clone https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025.git
+# Clone the repository
+git clone https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025.git
 
+# Navigate into the project folder
+cd FH-Shatipamba-React-Portfolio-2025
 # Navigate into the project folder
 cd FH-Shatipamba-React-Portfolio-2025
 
@@ -58,5 +76,6 @@ cd FH-Shatipamba-React-Portfolio-2025
 npm install
 
 # Start the development server
+# Start the development server (Vite)
 npm run dev
 ```
