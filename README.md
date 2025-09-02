@@ -1,26 +1,26 @@
-<h2 align="center">
-  Festus Helao Shatipamba<br/>
-  <a href="https://festushelaoshatipamba.com/" target="_blank">Portfolio</a>
-</h2>
+<h1 align="center">
+  Festus Helao Shatipamba
+</h1>
 
-<div align="center">
+<p align="center">
   <a href="https://festushelaoshatipamba.com/" target="_blank">
-    <img src="public/Screenshot.png" alt="Portfolio Demo" width="80%"/>
+    <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Live Demo" />
   </a>
-</div>
+  <a href="https://github.com/Ferrariboy99/FH-Shatipamba-React-Portfolio-2025" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge" alt="GitHub Repo" />
+  </a>
+</p>
 
-<br/>
+---
 
 ## 📌 About
 
-This is my personal **portfolio website** showcasing my **projects, resume, skills, certifications, and achievements**.  
-It is designed to be **modern, responsive, and fast**, giving visitors a clear overview of my work and professional background.  
+Welcome to my **personal portfolio website**! This project showcases my **projects, resume, skills, certifications, and achievements** in a modern, responsive, and interactive layout.  
+It provides visitors with a clear overview of my professional work and background.  
 
-<br/>
+---
 
 ## 🛠️ Built With
-
-This project was developed using the following technologies:
 
 - ⚛️ **React + TypeScript (Vite)**
 - 🎨 **Tailwind CSS & custom CSS**
@@ -29,6 +29,8 @@ This project was developed using the following technologies:
 - 📦 **NPM** for package management
 
 <br/>
+
+---
 
 ## ✨ Features
 
@@ -39,7 +41,7 @@ This project was developed using the following technologies:
 - 🖼️ **Skills Grid** – Icons and logos for technologies I use  
 - 📬 **Contact Section** – Direct links to my social media  
 
-<br/>
+---
 
 ## 🚀 Getting Started
 
@@ -57,3 +59,4 @@ npm install
 
 # Start the development server
 npm run dev
+```
