@@ -4,6 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
+  color-scheme: light;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -14,6 +15,7 @@
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.08);
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -48,6 +50,16 @@
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
+}
+
+.dark-theme {
+  color-scheme: dark;
+  --title-color: hsl(var(--hue), 12%, 92%);
+  --title-color-dark: hsl(var(--hue), 12%, 72%);
+  --text-color: hsl(var(--hue), 14%, 70%);
+  --body-color: hsl(var(--hue), 18%, 9%);
+  --container-color: hsl(var(--hue), 16%, 14%);
+  --shadow-color: rgba(0, 0, 0, 0.45);
 }
 
 /* Responsive typography */
@@ -85,6 +97,7 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -154,10 +167,12 @@ img {
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
   background-color: var(--title-color-dark);
+  transform: translateY(-2px);
 }
 
 .button__icon {
