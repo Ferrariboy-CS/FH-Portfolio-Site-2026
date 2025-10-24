@@ -266,10 +266,17 @@
 }
 
 /* Move toTop button up on mobile to avoid nav overlap */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .toTop {
-    bottom: 80px; /* Adjust this value to match your mobile nav height */
-    right: 16px;
+    bottom: calc(var(--header-height) + 3.5rem);
+    right: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toTop {
+    bottom: calc(var(--header-height) + 4.25rem);
+    right: 14px;
   }
 }
 
