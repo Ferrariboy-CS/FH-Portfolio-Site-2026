@@ -274,6 +274,28 @@ img {
 
   .section__subtitle {
     margin-bottom: var(--mb-2-5);
+  .container {
+    padding-inline: 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-2);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    padding-inline: 1rem;
+  }
+
+  .section {
+    padding: 2.25rem 0 3rem;
   }
 }
 

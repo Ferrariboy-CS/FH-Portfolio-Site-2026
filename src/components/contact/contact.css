@@ -73,6 +73,8 @@
   font-size: 1.7rem;
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color) 22%, transparent);
+  background: rgba(99, 102, 241, 0.18);
+  background: color-mix(in srgb, var(--accent-color) 18%, transparent);
   margin-bottom: 6px;
 }
 
@@ -82,6 +84,8 @@
   stroke: currentColor;
   fill: none;
   stroke-width: 2.15;
+  fill: transparent;
+  stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -279,10 +283,19 @@ html.dark .field__control::placeholder {
 }
 
 /* Move toTop button up on mobile to avoid nav overlap */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .toTop {
+    bottom: calc(var(--header-height) + 3.5rem);
+    right: 18px;
+  }
+}
+
+@media (max-width: 480px) {
   .toTop {
     bottom: calc(var(--header-height) + 2.5rem);
     right: 16px;
+    bottom: calc(var(--header-height) + 4.25rem);
+    right: 14px;
   }
 }
 
