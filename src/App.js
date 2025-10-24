@@ -36,12 +36,12 @@ const App = () => {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.dataset.theme = theme;
-    root.classList.toggle('dark-theme', theme === 'dark');
+    root.setAttribute('data-theme', theme);
+    root.classList.toggle('dark', theme === 'dark');
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0a0a0f' : '#ffffff');
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#090b1a' : '#f5f6ff');
     }
   }, [theme]);
 

@@ -97,6 +97,8 @@
 .home__scroll a{
     display: flex;
     align-items: center;
+    color: var(--title-color);
+    gap: 0.75rem;
 }
 
 .wheel {

@@ -6,7 +6,13 @@
     z-index: var(--z-fixed);
     background-color: var(--body-color);
     box-shadow: 0 10px 30px -20px var(--shadow-color);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-bottom-color: rgba(27, 29, 45, 0.08);
+}
+
+html.dark .header {
+    border-bottom-color: rgba(165, 180, 252, 0.18);
 }
 
 .nav{
@@ -37,16 +43,16 @@
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 999px;
-    background-color: transparent;
+    background-color: var(--container-color);
     color: var(--title-color);
-    border: 1px solid transparent;
+    border: 1px solid var(--border-color);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-    background-color: var(--container-color);
-    border-color: rgba(108, 99, 255, 0.2);
+    background-color: rgba(67, 56, 202, 0.08);
+    border-color: var(--accent-color);
     color: var(--title-color-dark, #6c63ff);
     transform: translateY(-1px);
 }
@@ -157,14 +163,15 @@
         font-size: 1.2rem;
     }
     
-    .nav__close {
+.nav__close {
         position: absolute;
         right: 1.3rem;
         bottom: .5rem;
         font-size: 1.5rem;
         cursor: pointer;
         color: var(--title-color);
-    }
+        transition: color 0.3s ease;
+}
     
     .nav__icon,
     .nav__close,
@@ -172,9 +179,10 @@
         display: block;
     }
 
-    .nav__close:hover {
+    .nav__close:hover,
+    .nav__close:focus {
         color: var(--title-color-dark);
-        
+        outline: none;
     }
 
     .nav__toggle{

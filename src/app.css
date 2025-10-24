@@ -7,15 +7,23 @@
   color-scheme: light;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
-  --body-color: hsl(var(--hue), var(--sat), 98%);
-  --container-color: #fff;
-  --shadow-color: rgba(0, 0, 0, 0.08);
+  --color-bg: #f5f6ff;
+  --color-surface: #ffffff;
+  --color-text-strong: #1b1d2d;
+  --color-text: #454966;
+  --color-border: rgba(27, 29, 45, 0.12);
+  --color-accent: #4338ca;
+  --color-accent-strong: #312e81;
+  --color-shadow: rgba(15, 23, 42, 0.08);
+
+  --title-color: var(--color-text-strong);
+  --title-color-dark: var(--color-accent-strong);
+  --text-color: var(--color-text);
+  --body-color: var(--color-bg);
+  --container-color: var(--color-surface);
+  --shadow-color: var(--color-shadow);
+  --border-color: var(--color-border);
+  --accent-color: var(--color-accent);
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -36,7 +44,6 @@
   --font-semi-bold: 600;
 
   /*========== Margenes Bottom ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -52,14 +59,25 @@
   --z-modal: 1000;
 }
 
-.dark-theme {
+html.dark {
   color-scheme: dark;
-  --title-color: hsl(var(--hue), 12%, 92%);
-  --title-color-dark: hsl(var(--hue), 12%, 72%);
-  --text-color: hsl(var(--hue), 14%, 70%);
-  --body-color: hsl(var(--hue), 18%, 9%);
-  --container-color: hsl(var(--hue), 16%, 14%);
-  --shadow-color: rgba(0, 0, 0, 0.45);
+  --color-bg: #090b1a;
+  --color-surface: #11162a;
+  --color-text-strong: #f5f7ff;
+  --color-text: #c2c8e7;
+  --color-border: rgba(99, 102, 241, 0.35);
+  --color-accent: #a5b4fc;
+  --color-accent-strong: #c7d2fe;
+  --color-shadow: rgba(7, 11, 28, 0.6);
+
+  --title-color: var(--color-text-strong);
+  --title-color-dark: var(--color-accent-strong);
+  --text-color: var(--color-text);
+  --body-color: var(--color-bg);
+  --container-color: var(--color-surface);
+  --shadow-color: var(--color-shadow);
+  --border-color: var(--color-border);
+  --accent-color: var(--color-accent);
 }
 
 /* Responsive typography */
@@ -98,6 +116,24 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+svg [fill="none"] {
+  fill: none;
+}
+
+img[data-theme="icon"] {
+  transition: filter 0.3s ease;
+}
+
+html.dark img[data-theme="icon"] {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 h1,
@@ -164,7 +200,8 @@ img {
   display: inline-block;
   background-color: var(--title-color);
   color: var(--container-color);
-  padding: 1.25rem 2rem;
+  padding: clamp(0.75rem, 2.5vw, 1rem) clamp(1.25rem, 4vw, 1.75rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   border-radius: 1rem;
   font-weight: var(--font-medium);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;

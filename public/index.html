@@ -17,24 +17,27 @@
     <script>
       (function () {
         var storageKey = "theme-preference";
+        var darkClass = "dark";
+        var lightColor = "#f5f6ff";
+        var darkColor = "#090b1a";
         try {
           var storedTheme = localStorage.getItem(storageKey);
           var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
           var theme = storedTheme || (prefersDark ? "dark" : "light");
-          document.documentElement.classList.toggle("dark-theme", theme === "dark");
-          document.documentElement.dataset.theme = theme;
+          document.documentElement.classList.toggle(darkClass, theme === "dark");
+          document.documentElement.setAttribute("data-theme", theme);
           var metaThemeColor = document.querySelector('meta[name="theme-color"]');
           if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', theme === "dark" ? '#0a0a0f' : '#ffffff');
+            metaThemeColor.setAttribute('content', theme === "dark" ? darkColor : lightColor);
           }
         } catch (error) {
           var fallbackDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.classList.toggle("dark-theme", fallbackDark);
+          document.documentElement.classList.toggle(darkClass, fallbackDark);
           var fallbackTheme = fallbackDark ? "dark" : "light";
-          document.documentElement.dataset.theme = fallbackTheme;
+          document.documentElement.setAttribute("data-theme", fallbackTheme);
           var fallbackMetaThemeColor = document.querySelector('meta[name="theme-color"]');
           if (fallbackMetaThemeColor) {
-            fallbackMetaThemeColor.setAttribute('content', fallbackDark ? '#0a0a0f' : '#ffffff');
+            fallbackMetaThemeColor.setAttribute('content', fallbackDark ? darkColor : lightColor);
           }
         }
       })();
