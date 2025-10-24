@@ -72,7 +72,8 @@
   border-radius: 0.9rem;
   font-size: 1.7rem;
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color) 22%, transparent);
+  background: rgba(99, 102, 241, 0.18);
+  background: color-mix(in srgb, var(--accent-color) 18%, transparent);
   margin-bottom: 6px;
 }
 
@@ -80,19 +81,10 @@
   width: 1.6rem;
   height: 1.6rem;
   stroke: currentColor;
-  fill: currentColor;
+  fill: transparent;
   stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.meta__icon svg [fill="none"],
-.meta__icon svg path[fill="none"] {
-  fill: none;
-}
-
-.meta__icon--solid svg {
-  stroke: none;
 }
 
 .meta__title {
