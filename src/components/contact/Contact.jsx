@@ -43,6 +43,7 @@ const Contact = () => {
               </a>
             </div>
             <div className="meta__item">
+              <div className="meta__icon meta__icon--solid"><FaWhatsapp /></div>
               <div className="meta__icon meta__icon--solid" aria-hidden="true">
                 <FaWhatsapp />
               </div>
