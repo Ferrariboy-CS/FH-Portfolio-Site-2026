@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Info = () => {
   return (
     <>
-    <div className='about__info grid'>
+      <div className='about__info grid'>
         <div className="about__box">
           <i className="bx bx-award"></i>
           <h3 className="about__title">Experience</h3>
@@ -21,9 +21,9 @@ const Info = () => {
           <h3 className="about__title">Support</h3>
           <span className="about__subtitle"> Online 24/7</span>
         </div>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Info
+export default Info;
