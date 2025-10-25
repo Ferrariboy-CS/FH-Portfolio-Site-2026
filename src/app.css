@@ -259,6 +259,21 @@ img {
 }
 
 @media screen and (max-width: 576px) {
+  body {
+    margin: 0 0 calc(var(--header-height) + 1.5rem) 0;
+  }
+
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .section {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-2-5);
   .container {
     padding-inline: 1.25rem;
     margin-left: auto;

@@ -113,7 +113,24 @@
   align-items: center;
   gap: 0.5em;
   margin-top: 0.5em;
+  padding: clamp(0.5rem, 2.4vw, 0.7rem) clamp(1.05rem, 4vw, 1.35rem);
+  background: var(--title-color);
+  color: var(--container-color);
+  border-radius: 12px;
+  font-size: clamp(0.9rem, 2.4vw, 1rem);
+  font-weight: 500;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.qualification__view-btn:hover,
+.qualification__view-btn:focus {
+  background: var(--title-color-dark);
+  color: var(--container-color);
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 /*=============== RESPONSIVE ===============*/
