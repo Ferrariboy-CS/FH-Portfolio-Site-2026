@@ -15,10 +15,11 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 48px;
   align-items: flex-start;
-  background: #fafafa;
+  background: var(--container-color);
   border-radius: 18px;
   padding: 32px 24px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 16px var(--shadow-color);
+  color: var(--text-color);
 }
 @media (max-width: 900px) {
   .contact__grid {
@@ -40,6 +41,7 @@
   font-weight: 700;
   margin-bottom: 18px;
   text-align: left;
+  color: var(--title-color);
 }
 
 .contact__meta {
@@ -49,37 +51,65 @@
 }
 
 .meta__item {
-  background: #fff;
+  background: var(--container-color);
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--shadow-color);
   padding: 22px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
   min-width: 220px;
+  border: 1px solid var(--border-color);
 }
 
 .meta__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.9rem;
   font-size: 1.7rem;
-  color: #222;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 22%, transparent);
   margin-bottom: 6px;
+}
+
+.meta__icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.meta__icon svg [fill="none"],
+.meta__icon svg path[fill="none"] {
+  fill: none;
+}
+
+.meta__icon--solid svg {
+  stroke: none;
 }
 
 .meta__title {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0 0 2px 0;
+  color: var(--title-color);
 }
 
 .meta__detail {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-color);
   margin: 0 0 8px 0;
 }
 
 .meta__action {
-  color: #222;
+  color: var(--accent-color);
   font-size: 0.98rem;
   font-weight: 500;
   text-decoration: none;
@@ -90,8 +120,8 @@
 }
 .meta__action:hover,
 .meta__action:focus {
-  color: var(--title-color-dark, #6c63ff);
-  text-shadow: 0 2px 8px rgba(108,99,255,0.12);
+  color: var(--title-color-dark, var(--accent-color));
+  text-shadow: 0 2px 8px rgba(108, 99, 255, 0.12);
   transform: scale(1.07);
   outline: none;
   text-decoration: none;
@@ -100,10 +130,12 @@
 /* Right: Contact Form */
 .contact__form-wrapper {
   width: 100%;
-  background: #fff;
+  background: var(--container-color);
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--shadow-color);
   padding: 32px 24px;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 600px) {
@@ -113,6 +145,10 @@
 }
 
 .contact__form { width: 100%; }
+
+.contact__form .contact__title {
+  color: var(--title-color);
+}
 
 .form__row {
   display: grid;
@@ -134,22 +170,42 @@
   gap: 8px;
 }
 .field--full { grid-column: 1 / -1; }
-.field__label { font-weight: 500; font-size: 1rem; }
+.field__label {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--title-color);
+}
 
 /* Do NOT set colors/backgrounds to preserve your original theme */
 .field__control {
   width: 100%;
   padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   outline: none;
   font-size: 1rem;
-  background: #fafafa;
-  transition: border 0.2s;
+  background: var(--body-color);
+  background: color-mix(in srgb, var(--body-color) 70%, var(--container-color));
+  color: var(--title-color);
+  transition: border 0.2s, background 0.2s, color 0.2s;
+}
+
+.field__control::placeholder {
+  color: var(--text-color-subtle);
+  color: color-mix(in srgb, var(--title-color) 68%, transparent);
+  opacity: 1;
+}
+
+.field__control:-webkit-autofill,
+.field__control:-webkit-autofill:hover,
+.field__control:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--title-color);
+  -webkit-box-shadow: 0 0 0px 1000px color-mix(in srgb, var(--body-color) 70%, var(--container-color)) inset;
+  transition: background-color 0s ease-in-out 0s;
 }
 .field__control:focus {
-  border: 1.5px solid #007bff;
-  background: #fff;
+  border: 1.5px solid var(--accent-color);
+  background: var(--container-color);
 }
 .field__control--textarea { min-height: 120px; resize: vertical; }
 
@@ -164,25 +220,26 @@
   text-align: center;
 }
 .form__status { font-size: 0.9rem; }
-.form__status.ok { opacity: 0.9; color: #2e7d32; }
-.form__status.err { opacity: 0.9; color: #c62828; }
+.form__status.ok { opacity: 0.9; color: #46d982; }
+.form__status.err { opacity: 0.9; color: #f87171; }
 
 .button.button--flex {
-  background: #222;
-  color: #fff;
+  background: var(--accent-color);
+  color: var(--color-bg);
   border: none;
   border-radius: 12px;
-  padding: 14px 32px;
-  font-size: 1.08rem;
+  padding: clamp(0.7rem, 2vw, 0.9rem) clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(0.95rem, 2.6vw, 1.05rem);
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .button.button--flex:hover {
-  background: #444;
+  background: var(--title-color-dark);
+  color: var(--color-bg);
 }
 
 /* Optional: Make button full width on mobile */
@@ -204,13 +261,30 @@
   place-items: center;
   border-radius: 10px;
   z-index: 1002; /* Ensure above nav */
+  background: var(--container-color);
+  color: var(--title-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 16px var(--shadow-color);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.toTop:hover {
+  transform: translateY(-4px);
+  background: var(--accent-color);
+  color: var(--color-bg);
 }
 
 /* Move toTop button up on mobile to avoid nav overlap */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .toTop {
-    bottom: 80px; /* Adjust this value to match your mobile nav height */
-    right: 16px;
+    bottom: calc(var(--header-height) + 3.5rem);
+    right: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toTop {
+    bottom: calc(var(--header-height) + 4.25rem);
+    right: 14px;
   }
 }
 
