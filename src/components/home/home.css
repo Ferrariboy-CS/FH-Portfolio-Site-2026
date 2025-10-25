@@ -55,7 +55,8 @@
 }
 
 .home__description {
-    min-width: 400px;
+    width: 100%;
+    max-width: 420px;
     margin-bottom: var(--mb-3);
 }
 
@@ -70,6 +71,7 @@
     width: 300px;
     height: 300px;
     animation: profile__animate 8s ease-in-out infinite 1s;
+    transition: box-shadow 0.3s ease;
 }
 
 
@@ -95,6 +97,8 @@
 .home__scroll a{
     display: flex;
     align-items: center;
+    color: var(--title-color);
+    gap: 0.75rem;
 }
 
 .wheel {
@@ -143,9 +147,9 @@
     }
 
     .home__description {
-        max-width: initial;
+        max-width: 100%;
         margin-bottom: var(--mb-2-5);
-    }  
+    }
     .home__img {
         width: 250px;
         height: 250px;
@@ -180,6 +184,10 @@
         box-shadow: inset  0 0 0 6px rgb(255 255 255 / 30%);
     }
 
+    .home__description {
+        max-width: 100%;
+    }
+
     .home__scroll{
         display: none;
     }
@@ -188,10 +196,88 @@
 
 
   /* For small devices */
+  @media screen and (max-width: 620px) {
+    .home__container {
+      row-gap: 3.5rem;
+    }
+
+    .home__content {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 2.25rem;
+      padding-top: 2.5rem;
+      text-align: center;
+    }
+
+    .home__data {
+      text-align: center;
+    }
+
+    .home__title {
+      line-height: 1.1;
+    }
+
+    .home__subtitle {
+      padding-left: 0;
+      margin-bottom: var(--mb-1-5);
+    }
+
+    .home__subtitle::before {
+      display: none;
+    }
+
+    .home__description {
+      margin-inline: auto;
+    }
+
+    .home__social {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      order: initial;
+    }
+
+    .home__social-icon {
+      font-size: 1.6rem;
+    }
+
+    .home__img {
+      order: initial;
+      width: 220px;
+      height: 220px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .home__content {
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+
+    .home__img {
+      width: 190px;
+      height: 190px;
+      box-shadow: inset 0 0 0 5px rgb(255 255 255 / 30%);
+    }
+
+    .home__title {
+      font-size: clamp(2rem, 7vw, 2.4rem);
+    }
+
+    .home__subtitle {
+      font-size: clamp(1.1rem, 5vw, 1.25rem);
+    }
+  }
+
   @media screen and (max-width: 350px) {
     .home__img{
         width: 180px;
         height: 180px;
+    }
+
+    .home__description {
+        max-width: 100%;
     }
 
   }
