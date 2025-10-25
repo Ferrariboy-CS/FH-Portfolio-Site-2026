@@ -107,7 +107,7 @@ const Qualification = () => {
                 </div>
                 {withButton && item.file && (
                   <button
-                    className="qualification__view-btn"
+                    className="button qualification__view-btn"
                     onClick={() => openModal(item.file, item.title, type || item.type)}
                   >
                     {buttonLabel}
@@ -134,7 +134,7 @@ const Qualification = () => {
                 </div>
                 {withButton && item.file && (
                   <button
-                    className="qualification__view-btn"
+                    className="button qualification__view-btn"
                     onClick={() => openModal(item.file, item.title, type || item.type)}
                   >
                     {buttonLabel}
@@ -225,7 +225,7 @@ const Qualification = () => {
             <div style={{ width: "100%", minHeight: 300, textAlign: "center" }}>
               <img src={modal.file} alt={modal.title} style={{ maxWidth: "100%", maxHeight: "60vh", borderRadius: 8 }} />
               <div style={{ marginTop: 16 }}>
-                <a href={modal.file} target="_blank" rel="noopener noreferrer" className="qualification__view-btn">
+                <a href={modal.file} target="_blank" rel="noopener noreferrer" className="button qualification__view-btn">
                   Open in new tab
                 </a>
               </div>
