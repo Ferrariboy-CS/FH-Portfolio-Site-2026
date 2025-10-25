@@ -73,6 +73,8 @@
   font-size: 1.7rem;
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color) 22%, transparent);
+  background: rgba(99, 102, 241, 0.18);
+  background: color-mix(in srgb, var(--accent-color) 18%, transparent);
   margin-bottom: 6px;
 }
 
@@ -80,18 +82,16 @@
   width: 1.6rem;
   height: 1.6rem;
   stroke: currentColor;
-  fill: currentColor;
+  fill: none;
+  stroke-width: 2.15;
+  fill: transparent;
   stroke-width: 2.25;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.meta__icon svg [fill="none"],
-.meta__icon svg path[fill="none"] {
-  fill: none;
-}
-
 .meta__icon--solid svg {
+  fill: currentColor;
   stroke: none;
 }
 
@@ -190,10 +190,19 @@
   transition: border 0.2s, background 0.2s, color 0.2s;
 }
 
+html.dark .field__control {
+  background: color-mix(in srgb, var(--container-color) 62%, rgba(165, 180, 252, 0.12));
+  border-color: color-mix(in srgb, var(--border-color) 75%, transparent);
+}
+
 .field__control::placeholder {
   color: var(--text-color-subtle);
   color: color-mix(in srgb, var(--title-color) 68%, transparent);
   opacity: 1;
+}
+
+html.dark .field__control::placeholder {
+  color: color-mix(in srgb, var(--title-color) 78%, transparent);
 }
 
 .field__control:-webkit-autofill,
@@ -283,6 +292,8 @@
 
 @media (max-width: 480px) {
   .toTop {
+    bottom: calc(var(--header-height) + 2.5rem);
+    right: 16px;
     bottom: calc(var(--header-height) + 4.25rem);
     right: 14px;
   }
@@ -309,5 +320,48 @@
   }
   .contact__form-wrapper {
     padding: 12px 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 40px 0 56px;
+  }
+
+  .contact__grid {
+    gap: 24px;
+    padding: 12px 0;
+  }
+
+  .contact__content {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .contact__title {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  .meta__item {
+    padding: 18px 14px;
+  }
+
+  .meta__detail {
+    font-size: 0.95rem;
+  }
+
+  .form__row {
+    gap: 14px;
+  }
+
+  .field__control {
+    padding: 12px 14px;
+    font-size: 0.98rem;
+  }
+
+  .form__actions {
+    gap: 10px;
   }
 }
