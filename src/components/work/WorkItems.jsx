@@ -38,7 +38,13 @@ const WorkItems = ({ item }) => {
   return (
     <>
       <div className="work__card" onClick={() => setShowModal(true)}>
-        <img src={item.images[0]} alt={item.title} className='work__img' />
+        <img
+          src={item.images[0]}
+          alt={item.title}
+          className='work__img'
+          loading='lazy'
+          decoding='async'
+        />
         <h3 className="work__title">{item.title}</h3>
         <span className="work__button">
           View Details <i className="bx bx-right-arrow-alt work__button-icon"></i>
@@ -65,7 +71,13 @@ const WorkItems = ({ item }) => {
               {!isMobile && (
                 <button className="slideshow-btn slideshow-prev" onClick={e => {e.stopPropagation(); setSlide((slide - 1 + item.images.length) % item.images.length);}}>&lt;</button>
               )}
-              <img src={item.images[slide]} alt={item.title} className="portfolio__modal-img" />
+              <img
+                src={item.images[slide]}
+                alt={item.title}
+                className="portfolio__modal-img"
+                loading="lazy"
+                decoding="async"
+              />
               {!isMobile && (
                 <button className="slideshow-btn slideshow-next" onClick={e => {e.stopPropagation(); setSlide((slide + 1) % item.images.length);}}>&gt;</button>
               )}

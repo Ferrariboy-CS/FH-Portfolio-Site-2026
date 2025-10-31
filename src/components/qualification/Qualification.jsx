@@ -223,7 +223,13 @@ const Qualification = () => {
             <h4 className="services__modal-title">{modal.title}</h4>
             <i className="uil uil-times services__modal-close" onClick={closeModal} tabIndex={0} aria-label="Close"></i>
             <div style={{ width: "100%", minHeight: 300, textAlign: "center" }}>
-              <img src={modal.file} alt={modal.title} style={{ maxWidth: "100%", maxHeight: "60vh", borderRadius: 8 }} />
+              <img
+                src={modal.file}
+                alt={modal.title}
+                style={{ maxWidth: "100%", maxHeight: "60vh", borderRadius: 8 }}
+                loading="lazy"
+                decoding="async"
+              />
               <div style={{ marginTop: 16 }}>
                 <a href={modal.file} target="_blank" rel="noopener noreferrer" className="button qualification__view-btn">
                   Open in new tab

@@ -1,14 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import "./app.css";
+import React, { Suspense, lazy, useCallback, useEffect, useState } from 'react';
+import './app.css';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
-import About from './components/about/About';
-import Skills from './components/skills/Skills';
-import Qualification from './components/qualification/Qualification';
-import Services from './components/services/Services';
-import Work from './components/work/Work';
-import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
+import LazySection from './components/LazySection';
+
+const About = lazy(() => import('./components/about/About'));
+const Skills = lazy(() => import('./components/skills/Skills'));
+const Qualification = lazy(() => import('./components/qualification/Qualification'));
+const Services = lazy(() => import('./components/services/Services'));
+const Work = lazy(() => import('./components/work/Work'));
+const Contact = lazy(() => import('./components/contact/Contact'));
+const Footer = lazy(() => import('./components/footer/Footer'));
 
 const THEME_STORAGE_KEY = 'theme-preference';
 
@@ -29,6 +31,12 @@ const getInitialThemeState = () => {
     return { theme: 'light', isManual: false };
   }
 };
+
+const sectionFallback = (
+  <div className="section-loading" role="status" aria-live="polite">
+    Loading section…
+  </div>
+);
 
 const App = () => {
   const [themeState, setThemeState] = useState(getInitialThemeState);
@@ -77,15 +85,43 @@ const App = () => {
   return (
     <>
       <Header theme={theme} onToggleTheme={toggleTheme} />
-      <main className='main'>
+      <main className="main">
         <Home />
-        <About />
-        <Skills />
-        <Qualification />
-        <Services />
-        <Work />
-        <Contact />
-        <Footer />
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="about" minHeight={560}>
+            <About />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="skills" minHeight={420}>
+            <Skills />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="qualification" minHeight={640}>
+            <Qualification />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="services" minHeight={560}>
+            <Services />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="work" minHeight={540}>
+            <Work />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection placeholderId="contact" minHeight={640}>
+            <Contact />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={sectionFallback}>
+          <LazySection minHeight={240}>
+            <Footer />
+          </LazySection>
+        </Suspense>
       </main>
     </>
   );
