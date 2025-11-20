@@ -1,5 +1,4 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -166,9 +165,35 @@ img {
   height: auto;
 }
 
+.lazy-section-wrapper {
+  width: 100%;
+}
+
+.lazy-section-placeholder,
+.section-loading {
+  width: 100%;
+  min-height: 280px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(59, 130, 246, 0.05));
+  border: 1px solid var(--border-color);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-subtle);
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.section-loading {
+  margin: 0 auto;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 6rem 0 2rem;
+  content-visibility: auto;
+  contain-intrinsic-size: 600px 800px;
 }
 
 .section__title {

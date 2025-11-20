@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import AboutImg from '../../assets/AboutPic.png';
+import AboutImg from '../../assets/aboutpic.jpg';
 import CV from '../../assets/CV.pdf';
 import Info from './Info';
 
@@ -10,11 +10,18 @@ const About = () => {
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle"> My Introduction</span>
       <div className="about__container container grid">
-        <img src={AboutImg} alt="" className="about__img" />
+        <img
+          src={AboutImg}
+          alt="Portrait of Festus Helao Shatipamba"
+          className="about__img"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="about__data">
           <Info />
           <p className="about__description">
-            I’m a Computer Science graduate driven by a passion for coding, problem-solving, and technology. I enjoy turning complex challenges into innovative, real-world solutions while constantly exploring new tools and technologies. Outside of tech, I’m an avid chess player and a Formula 1 enthusiast who thrives on strategy, precision, and performance—both on the board and in code.
+            Computer Science graduate passionate about coding, problem-solving, and technology. I enjoy tackling challenges,
+            learning new tools, and building creative solutions. I also love chess and Formula 1.
           </p>
           <a download='' href={CV} className="button button--flex">
             Download CV
