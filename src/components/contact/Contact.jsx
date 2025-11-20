@@ -43,7 +43,9 @@ const Contact = () => {
               </a>
             </div>
             <div className="meta__item">
-              <div className="meta__icon"><FaWhatsapp /></div>
+              <div className="meta__icon meta__icon--solid">
+                <FaWhatsapp />
+              </div>
               <div className="meta__title">WhatsApp</div>
               <div className="meta__detail">+264814630606</div>
               <a href="https://wa.me/264814630606" className="meta__action" target="_blank" rel="noopener noreferrer">
