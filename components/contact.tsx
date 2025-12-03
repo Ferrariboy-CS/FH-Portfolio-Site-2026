@@ -5,7 +5,7 @@ import { FiMail, FiArrowUp } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
-const SERVICE_ID = 'service_nzjh9un'
+const SERVICE_ID = 'service_xebm82j'
 const TEMPLATE_ID = 'template_aohjt1o'
 const PUBLIC_KEY = 'jLiKmgBt3Y2VmXhYX'
 
@@ -17,15 +17,55 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!formRef.current) {
+      setStatus({ type: 'error', msg: 'Form not found. Please refresh the page.' })
+      return
+    }
+
     setStatus({ type: 'loading', msg: 'Sending...' })
 
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY)
-      setStatus({ type: 'success', msg: 'Thanks! Your message has been sent.' })
-      formRef.current?.reset()
-    } catch (err) {
-      console.error(err)
-      setStatus({ type: 'error', msg: 'Oops, something went wrong. Please try again.' })
+      // Update the hidden time field before sending
+      const timeInput = formRef.current.querySelector('input[name="time"]') as HTMLInputElement
+      if (timeInput) {
+        timeInput.value = new Date().toLocaleString()
+      }
+
+      console.log('Sending email with EmailJS...', { SERVICE_ID, TEMPLATE_ID })
+      const result = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      console.log('EmailJS result:', result)
+      
+      if (result.status === 200 || result.text === 'OK') {
+        setStatus({ type: 'success', msg: 'Thanks! Your message has been sent.' })
+        formRef.current.reset()
+        // Reset status after 5 seconds
+        setTimeout(() => {
+          setStatus({ type: 'idle', msg: '' })
+        }, 5000)
+      } else {
+        setStatus({ type: 'error', msg: 'Failed to send message. Please try again.' })
+      }
+    } catch (err: any) {
+      console.error('EmailJS Error:', err)
+      // Provide more detailed error message
+      let errorMsg = 'Oops, something went wrong. Please try again.'
+      
+      if (err?.text) {
+        errorMsg = err.text
+        // Check for Gmail API errors
+        if (err.text.includes('Gmail_API') || err.text.includes('Invalid grant')) {
+          errorMsg = 'Email service needs reconnection. Please contact the site administrator.'
+        } else {
+          errorMsg = `Error: ${err.text}`
+        }
+      } else if (err?.message) {
+        errorMsg = `Error: ${err.message}`
+      } else if (err?.status) {
+        errorMsg = `Error ${err.status}: Failed to send message`
+      }
+      
+      setStatus({ type: 'error', msg: errorMsg })
     }
   }
 
