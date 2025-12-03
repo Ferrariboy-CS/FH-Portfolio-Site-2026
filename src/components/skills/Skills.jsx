@@ -23,7 +23,7 @@ function Skills() {
       <div className="skills__container container grid">
         {skills.map((s) => (
           <div key={s.name} className="skills__container-box">
-            <img className="skills__container-img" src={s.img} alt={s.name} />
+            <img className="skills__container-img" src={s.img} alt={s.name} loading="lazy" decoding="async" />
             <div className="skills__container-name">{s.name}</div>
           </div>
         ))}
