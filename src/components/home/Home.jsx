@@ -4,6 +4,7 @@ import './home.css';
 import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
+import propic from '../../assets/Propic (2).png';
 
 const containerVariants = {
   hidden: {},
@@ -38,10 +39,20 @@ function Home() {
           <motion.div variants={itemVariants}>
             <Social />
           </motion.div>
-          <motion.div
-            className='home__img'
-            variants={itemVariants}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+          <div 
+            className='home__img' 
+            style={{ 
+              backgroundImage: `url(${propic})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              boxShadow: 'inset 0 0 0 9px rgb(255 255 255 / 30%)',
+              width: '300px',
+              height: '300px',
+              borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%',
+              animation: 'profile__animate 8s ease-in-out infinite 1s',
+              justifySelf: 'center',
+            }}
           />
           <motion.div variants={itemVariants}>
             <Data />

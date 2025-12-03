@@ -61,17 +61,17 @@
 }
 
 .home__img{
-    background: url(../../assets/Propic\ \(2\).png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-shadow: inset  0 0 0 9px rgb(255 255 255 / 30%);
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%) !important;
     order: 1;
     justify-self: center;
-    width: 300px;
-    height: 300px;
-    animation: profile__animate 8s ease-in-out infinite 1s;
-    transition: box-shadow 0.3s ease;
+    width: 300px !important;
+    height: 300px !important;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40% !important;
+    animation: profile__animate 8s ease-in-out infinite 1s !important;
+    overflow: hidden;
 }
 
 
@@ -154,6 +154,8 @@
         width: 250px;
         height: 250px;
         box-shadow: inset  0 0 0 8px rgb(255 255 255 / 30%);
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        animation: profile__animate 8s ease-in-out infinite 1s;
     }
 
     .home__scroll{
@@ -176,12 +178,16 @@
     .home__img {
         order: initial;
         justify-self: initial;
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        animation: profile__animate 8s ease-in-out infinite 1s;
     }
 
     .home__img {
         width: 200px;
         height: 200px;
         box-shadow: inset  0 0 0 6px rgb(255 255 255 / 30%);
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        animation: profile__animate 8s ease-in-out infinite 1s;
     }
 
     .home__description {
@@ -246,6 +252,8 @@
       order: initial;
       width: 220px;
       height: 220px;
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+      animation: profile__animate 8s ease-in-out infinite 1s;
     }
   }
 
@@ -259,6 +267,8 @@
       width: 190px;
       height: 190px;
       box-shadow: inset 0 0 0 5px rgb(255 255 255 / 30%);
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+      animation: profile__animate 8s ease-in-out infinite 1s;
     }
 
     .home__title {
@@ -274,6 +284,8 @@
     .home__img{
         width: 180px;
         height: 180px;
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        animation: profile__animate 8s ease-in-out infinite 1s;
     }
 
     .home__description {

@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============== CSS VARIABLES ===============*/
+:root {
+  --header-height: 3rem;
+  color-scheme: light;
+
+  /* Light mode colors */
+  --color-bg: #f5f6ff;
+  --color-surface: #ffffff;
+  --color-text-strong: #1b1d2d;
+  --color-text: #454966;
+  --color-text-subtle: #5d6289;
+  --color-border: rgba(27, 29, 45, 0.12);
+  --color-accent: #4338ca;
+  --color-accent-strong: #312e81;
+  --color-shadow: rgba(15, 23, 42, 0.08);
+
+  /* Font sizes (mobile-first) */
+  --big-font-size: 2.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+}
+
+/* Dark mode */
+.dark {
+  color-scheme: dark;
+  --color-bg: #090b1a;
+  --color-surface: #11162a;
+  --color-text-strong: #f5f7ff;
+  --color-text: #c2c8e7;
+  --color-text-subtle: #aab5ec;
+  --color-border: rgba(99, 102, 241, 0.35);
+  --color-accent: #a5b4fc;
+  --color-accent-strong: #c7d2fe;
+  --color-shadow: rgba(7, 11, 28, 0.6);
+}
+
+/* Desktop font sizes */
+@media (min-width: 992px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text-base font-sans;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3 {
+    @apply text-text-strong font-semibold;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  button {
+    @apply cursor-pointer border-none outline-none;
+  }
+
+  ul {
+    @apply list-none;
+  }
+}
+
+@layer components {
+  /* Section styles */
+  .section {
+    @apply py-8 px-4 md:py-16 lg:py-24;
+  }
+
+  .section__title {
+    @apply text-h1 text-text-strong text-center mb-1;
+  }
+
+  .section__subtitle {
+    @apply block text-small text-text-subtle text-center mb-8 md:mb-12 lg:mb-16;
+  }
+
+  /* Container */
+  .container {
+    @apply max-w-[968px] mx-auto px-4 md:px-6;
+  }
+
+  /* Button */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           bg-text-strong text-surface
+           px-5 py-3 md:px-7 md:py-4
+           rounded-xl font-medium text-normal
+           transition-all duration-200
+           hover:bg-accent-strong hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-accent hover:text-accent-strong;
+  }
+}
+
+/* Advanced Blob Mask Animation - Lando Norris style with smooth morphing */
+@keyframes blob-morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  12.5% {
+    border-radius: 55% 45% 35% 65% / 55% 35% 65% 45%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  37.5% {
+    border-radius: 40% 55% 60% 50% / 60% 40% 50% 55%;
+  }
+  50% {
+    border-radius: 50% 50% 30% 80% / 80% 30% 50% 50%;
+  }
+  62.5% {
+    border-radius: 45% 55% 40% 70% / 70% 40% 55% 45%;
+  }
+  75% {
+    border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
+  }
+  87.5% {
+    border-radius: 50% 45% 55% 45% / 55% 45% 45% 50%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.blob-mask-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: blob-morph 20s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  outline: 3px solid var(--color-text-strong);
+  outline-offset: -3px;
+  background: transparent;
+  transition: outline-color 0.3s ease;
+}
+
+.blob-mask-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.blob-image {
+  border-radius: inherit;
+  transition: transform 0.3s ease;
+}
+
+.blob-image:hover {
+  transform: scale(1.05);
+}
+
+.blob-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Profile image animation (backward compatibility) */
+@keyframes profile-animate {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+}
+
+.profile-blob {
+  animation: blob-morph 20s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border: 3px solid transparent;
+  outline: 3px solid var(--color-text-strong);
+  outline-offset: -3px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* About Image Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-container {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation-play-state: paused;
+}
+
+.about-image {
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(3.75rem); }
+}
+
+.animate-scroll {
+  animation: scroll 2s ease infinite;
+}
+
+/* Modal overlay animation */
+@keyframes modal-in {
+  from {
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-modal-in {
+  animation: modal-in 0.2s ease-out;
+}
+
+/* Disable scroll when modal is open */
+.disable-scroll {
+  @apply overflow-hidden;
+}
+
+/* Animated Code Background - Cursor Following */
+
+/* Write Me Button Animation */
+@keyframes write-me-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(4px) translateY(-4px) scale(1.1);
+  }
+}
+
+.write-me-button {
+  position: relative;
+  overflow: visible;
+}
+
+.write-me-button::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.write-me-button:hover::before {
+  opacity: 0.3;
+  animation: write-me-pulse 1.5s ease-in-out infinite;
+}
+
+

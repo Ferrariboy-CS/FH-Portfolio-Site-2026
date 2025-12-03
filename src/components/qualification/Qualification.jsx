@@ -197,22 +197,15 @@ const Qualification = () => {
           <div className={toggleState === 3 ? "qualification__content qualification__content-active" : "qualification__content"}>
             <div className="qualification__data left">
               <div className="qualification__info">
-                <h3 className="qualification__title">ICT Support Technician (Intern)</h3>
-                <span className="qualification__subtitle">Unikela Enterprise CC</span>
+                <h3 className="qualification__title">IT Technician</h3>
+                <span className="qualification__subtitle">Rubinstein Chess Academy</span>
                 <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> Nov 2024 – Nov 2025
+                  <i className="uil uil-calendar-alt"></i> May 2024 – August 2024
                 </div>
-                <ul className="qualification__responsibilities" style={{ marginTop: '1rem', paddingLeft: '1.5rem' }}>
-                  <li>• Setting up new computers and configuring hardware</li>
-                  <li>• Installing and troubleshooting software applications</li>
-                  <li>• Cloning hard drives and maintaining system backups</li>
-                  <li>• Installing and configuring network printers</li>
-                  <li>• Providing remote technical support to clients</li>
-                  <li>• Attending to client IT-related queries efficiently</li>
-                </ul>
               </div>
               <div>
                 <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
               </div>
             </div>
           </div>
