@@ -1,17 +1,17 @@
 import Image from 'next/image'
 
 const skills = [
-  { name: 'C#', img: '/skills/c-sharp.png' },
-  { name: 'Java', img: '/skills/java.png' },
-  { name: 'Python', img: '/skills/python.png' },
-  { name: 'JavaScript', img: '/skills/javascript.svg' },
-  { name: 'HTML', img: '/skills/html.svg' },
-  { name: 'CSS', img: '/skills/css.svg' },
-  { name: 'SQL Server', img: '/skills/sql-server.png' },
-  { name: 'Git', img: '/skills/git.png' },
-  { name: 'Firebase', img: '/skills/firebase.svg' },
-  { name: 'WordPress', img: '/skills/wordpress.png' },
-  { name: 'Figma', img: '/skills/figma.png' },
+  { name: 'C#', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+  { name: 'Java', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'Python', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'JavaScript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'HTML', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'SQL Server', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' },
+  { name: 'Git', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'Firebase', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+  { name: 'WordPress', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
+  { name: 'Figma', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
 ]
 
 export default function Skills() {

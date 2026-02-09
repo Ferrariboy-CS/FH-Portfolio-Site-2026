@@ -1,155 +1,120 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
-
-interface CodeSnippet {
-  id: number
-  text: string
-  x: number
-  y: number
-  opacity: number
-  fontSize: number
-  color: string
-  createdAt: number
-}
+import { useEffect, useRef, useCallback } from 'react'
 
 const CODE_SNIPPETS = [
-  'const portfolio = () => {',
-  'function create() {',
-  'import React from "react"',
-  'export default function',
-  'const [state, setState]',
-  'useEffect(() => {',
-  'className="flex"',
-  'return <div>',
-  'interface Props {',
-  'type Component = {',
-  'async function fetch()',
-  'const data = await',
-  'useState<Type>',
-  'className="grid"',
-  'export const',
-  'import { useState }',
-  'const handleClick =',
-  'onClick={() => {',
-  'useCallback(() =>',
-  'useMemo(() =>',
-  'const theme =',
-  'className="bg-"',
-  'const response =',
-  'try { await',
-  'catch (error)',
-  'const Component =',
-  'export type',
-  'interface User {',
-  'const api = {',
-  'fetch("/api")',
-  'const config =',
-  'type Status =',
-  'const result =',
-  'if (condition)',
-  'return null',
-  'const styles =',
-  'className="text-"',
+  'const', 'function', 'return', 'import', 'export',
+  'async', 'await', 'class', 'interface', 'type',
+  '( )=>', '{ }', '[ ]', 'true', 'false',
+  'React', 'useState', 'useEffect', 'props', 'state',
+  '<div>', '</>', 'null', 'map( )', 'filter( )',
+  'npm', 'git', 'push', 'pull', 'merge',
+  '===', '!==', '&&', '||', '...',
+  'flex', 'grid', 'component', 'render', 'build',
 ]
 
-const COLORS = [
-  'text-accent/10',
-  'text-accent-strong/8',
-  'text-text-subtle/6',
-  'text-accent/8',
-]
-
-let globalSnippetId = 0
-
-const generateSnippet = (x: number, y: number): CodeSnippet => {
-  const text = CODE_SNIPPETS[Math.floor(Math.random() * CODE_SNIPPETS.length)]
-  // Add random offset from cursor position
-  const offsetX = (Math.random() - 0.5) * 200 // -100px to +100px
-  const offsetY = (Math.random() - 0.5) * 200 // -100px to +100px
-  const opacity = 0.15 + Math.random() * 0.2 // 0.15-0.35
-  const fontSize = 0.75 + Math.random() * 0.5 // 0.75rem - 1.25rem
-  const color = COLORS[Math.floor(Math.random() * COLORS.length)]
-
-  return {
-    id: globalSnippetId++,
-    text,
-    x: x + offsetX,
-    y: y + offsetY,
-    opacity,
-    fontSize,
-    color,
-    createdAt: Date.now(),
-  }
+interface Column {
+  x: number
+  chars: { text: string; y: number; opacity: number }[]
+  speed: number
+  nextSpawn: number
 }
 
 export default function AnimatedCodeBackground() {
-  const [snippets, setSnippets] = useState<CodeSnippet[]>([])
-  const lastSnippetTime = useRef(0)
-  const snippetInterval = 300 // Create new snippet every 300ms when mouse moves
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const columnsRef = useRef<Column[]>([])
+  const animationRef = useRef<number>()
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      
-      // Add new snippet near cursor position
-      const now = Date.now()
-      if (now - lastSnippetTime.current > snippetInterval) {
-        lastSnippetTime.current = now
-        setSnippets((prev) => {
-          // Remove old snippets (older than 3 seconds)
-          const filtered = prev.filter((s) => Date.now() - s.createdAt < 3000)
-          // Add new snippet near cursor
-          return [...filtered, generateSnippet(e.clientX, e.clientY)]
-        })
-      }
-    }
-
-    // Cleanup old snippets and trigger re-render for fade effect
-    const cleanupInterval = setInterval(() => {
-      setSnippets((prev) => {
-        const now = Date.now()
-        // Remove snippets older than 3 seconds
-        return prev.filter((s) => now - s.createdAt < 3000)
-      })
-    }, 100) // Update every 100ms for smooth fade
-
-    window.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      clearInterval(cleanupInterval)
-    }
+  const initColumns = useCallback(() => {
+    const width = window.innerWidth
+    const columnWidth = 100
+    const columnCount = Math.ceil(width / columnWidth)
+    
+    columnsRef.current = Array.from({ length: columnCount }, (_, i) => ({
+      x: i * columnWidth + columnWidth / 2 + (Math.random() - 0.5) * 30,
+      chars: [],
+      speed: 0.5 + Math.random() * 1,
+      nextSpawn: Math.random() * 200,
+    }))
   }, [])
 
-  return (
-    <div
-      className="fixed inset-0 overflow-hidden pointer-events-none z-0"
-      aria-hidden="true"
-    >
-      {snippets.map((snippet) => {
-        const age = Date.now() - snippet.createdAt
-        const fadeProgress = Math.min(age / 3000, 1) // Fade out over 3 seconds
-        const currentOpacity = snippet.opacity * (1 - fadeProgress)
-        const scale = 0.8 + (fadeProgress * 0.2) // Scale from 0.8 to 1.0
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
 
-        return (
-          <div
-            key={snippet.id}
-            className={`absolute ${snippet.color} font-mono select-none whitespace-nowrap transition-opacity duration-300`}
-            style={{
-              left: `${snippet.x}px`,
-              top: `${snippet.y}px`,
-              fontSize: `${snippet.fontSize}rem`,
-              opacity: currentOpacity,
-              transform: `translate(-50%, -50%) scale(${scale})`,
-              pointerEvents: 'none',
-            }}
-          >
-            {snippet.text}
-          </div>
-        )
-      })}
-    </div>
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const resize = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      initColumns()
+    }
+
+    resize()
+    window.addEventListener('resize', resize)
+
+    let frameCount = 0
+
+    const animate = () => {
+      frameCount++
+      
+      // Clear with fade effect
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      columnsRef.current.forEach(column => {
+        // Spawn new character
+        if (frameCount >= column.nextSpawn) {
+          column.chars.push({
+            text: CODE_SNIPPETS[Math.floor(Math.random() * CODE_SNIPPETS.length)],
+            y: -20,
+            opacity: 0.08 + Math.random() * 0.07, // 8-15% opacity
+          })
+          column.nextSpawn = frameCount + 80 + Math.random() * 120
+        }
+
+        // Update and draw characters
+        column.chars = column.chars.filter(char => {
+          char.y += column.speed
+          
+          // Fade out as it goes down
+          const progress = char.y / canvas.height
+          const currentOpacity = char.opacity * (1 - progress * 0.5)
+          
+          if (char.y > canvas.height + 50) return false
+
+          // Draw text
+          ctx.font = '14px "Fira Code", "JetBrains Mono", monospace'
+          ctx.fillStyle = `rgba(16, 185, 129, ${currentOpacity})`
+          ctx.shadowColor = 'rgba(16, 185, 129, 0.4)'
+          ctx.shadowBlur = 8
+          ctx.textAlign = 'center'
+          ctx.fillText(char.text, column.x, char.y)
+          ctx.shadowBlur = 0
+
+          return true
+        })
+      })
+
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    return () => {
+      window.removeEventListener('resize', resize)
+      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+    }
+  }, [initColumns])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      aria-hidden="true"
+      style={{ opacity: 0.8 }}
+    />
   )
 }
 

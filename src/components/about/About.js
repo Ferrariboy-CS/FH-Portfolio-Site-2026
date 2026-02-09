@@ -1,6 +1,7 @@
 import React from 'react';
 import './about.css';
-import AboutImg from '../../assets/aboutpic.jpg';
+// import AboutImg from '../../assets/aboutpic.jpg';
+const AboutImg = '/Fessy Grad - 07.jpg'; // Local public image for About section
 import CV from '../../assets/CV.pdf';
 import Info from './Info';
 
@@ -10,13 +11,28 @@ const About = () => {
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle"> My Introduction</span>
       <div className="about__container container grid">
-        <img
-          src={AboutImg}
-          alt="Portrait of Festus Helao Shatipamba"
-          className="about__img"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="c-glitch">
+          <div 
+            className="c-glitch__img" 
+            style={{ backgroundImage: `url(${AboutImg})` }}
+          />
+          <div 
+            className="c-glitch__img" 
+            style={{ backgroundImage: `url(${AboutImg})` }}
+          />
+          <div 
+            className="c-glitch__img" 
+            style={{ backgroundImage: `url(${AboutImg})` }}
+          />
+          <div 
+            className="c-glitch__img" 
+            style={{ backgroundImage: `url(${AboutImg})` }}
+          />
+          <div 
+            className="c-glitch__img" 
+            style={{ backgroundImage: `url(${AboutImg})` }}
+          />
+        </div>
         <div className="about__data">
           <Info />
           <p className="about__description">

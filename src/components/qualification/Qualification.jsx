@@ -3,6 +3,13 @@ import './qualification.css';
 
 const certificates = [
   {
+    title: "ISC2 Candidate",
+    org: "ISC2",
+    date: "Nov 2025 - Nov 2026",
+    file: "/certifications/ISC2 Candidate.png",
+    type: "certification",
+  },
+  {
     title: "CCNAv7: Introduction to Networks",
     org: "Cisco Networking Academy",
     date: "Nov 2022",
@@ -197,15 +204,31 @@ const Qualification = () => {
           <div className={toggleState === 3 ? "qualification__content qualification__content-active" : "qualification__content"}>
             <div className="qualification__data left">
               <div className="qualification__info">
+                <h3 className="qualification__title">Web Developer</h3>
+                <span className="qualification__subtitle">Gongo Graphic Design CC · Part-time</span>
+                <div className="qualification__calendar">
+                  <i className="uil uil-calendar-alt"></i> Oct 2025 - Present
+                </div>
+                <p style={{ fontSize: "0.9rem", marginTop: "0.5rem", lineHeight: "1.5" }}>
+                  Building responsive, user-friendly websites and applications. Creating clean UI designs and delivering optimized, high-performance web solutions.
+                </p>
+              </div>
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+            </div>
+            <div className="qualification__data right">
+              <div></div>
+              <div>
+                <span className="qualification__rounder"></span>
+              </div>
+              <div className="qualification__info">
                 <h3 className="qualification__title">IT Technician</h3>
                 <span className="qualification__subtitle">Rubinstein Chess Academy</span>
                 <div className="qualification__calendar">
                   <i className="uil uil-calendar-alt"></i> May 2024 – August 2024
                 </div>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
               </div>
             </div>
           </div>

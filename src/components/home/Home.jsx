@@ -4,7 +4,7 @@ import './home.css';
 import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
-import propic from '../../assets/Propic (2).png';
+const propic = '/Fessy Grad - 02.jpg';
 
 const containerVariants = {
   hidden: {},
@@ -39,21 +39,17 @@ function Home() {
           <motion.div variants={itemVariants}>
             <Social />
           </motion.div>
-          <div 
-            className='home__img' 
-            style={{ 
-              backgroundImage: `url(${propic})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              boxShadow: 'inset 0 0 0 9px rgb(255 255 255 / 30%)',
-              width: '300px',
-              height: '300px',
-              borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%',
-              animation: 'profile__animate 8s ease-in-out infinite 1s',
-              justifySelf: 'center',
-            }}
-          />
+          <div className='profile-card'>
+            <div 
+              className='profile-card__image' 
+              style={{ backgroundImage: `url(${propic})` }}
+            >
+              <div className='profile-card__info'>
+                {/* <span className='profile-card__name'>Ferrariboy</span>
+                <span className='profile-card__role'>Software Developer</span> */}
+              </div>
+            </div>
+          </div>
           <motion.div variants={itemVariants}>
             <Data />
           </motion.div>

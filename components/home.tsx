@@ -1,6 +1,6 @@
 'use client'
 
-import BlobMask from './BlobMask'
+import Image from 'next/image'
 
 const socialLinks = [
   { href: 'https://www.instagram.com/helao_nafimane?igsh=MWJpZmY1anl4ZW56bA==', icon: 'uil-instagram', label: 'Instagram' },
@@ -28,14 +28,20 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto md:order-1 md:justify-self-center">
-            <BlobMask
-              src="/Propic.png"
-              alt="Festus Helao Shatipamba"
-              className="w-full h-full"
-              priority
-              sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 288px, 320px"
-            />
+          <div className="profile-card mx-auto md:order-1 md:justify-self-center">
+            <div className="profile-card__image">
+              <Image
+                src="/Propic.png"
+                alt="Festus Helao Shatipamba"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, 280px"
+              />
+              <div className="profile-card__info">
+                <span className="profile-card__name">@ferrariboy</span>
+              </div>
+            </div>
           </div>
 
           <div className="md:order-2">

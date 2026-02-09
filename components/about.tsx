@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const infoItems = [
   { icon: 'bx-award', title: 'Experience', subtitle: '+ 4 years' },
   { icon: 'bx-briefcase-alt', title: 'Completed', subtitle: '3+ Projects' },
@@ -14,17 +12,12 @@ export default function About() {
 
       <div className="container">
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16">
-          <div className="relative w-56 h-auto md:w-80 lg:w-96 mx-auto md:mx-0 about-image-wrapper">
-            <div className="about-image-container">
-              <Image
-                src="/AboutPic.png"
-                alt="About Festus Helao Shatipamba"
-                width={350}
-                height={350}
-                className="w-full h-auto object-cover about-image"
-                sizes="(max-width: 768px) 224px, (max-width: 1024px) 320px, 384px"
-              />
-            </div>
+          <div className="c-glitch mx-auto md:mx-0">
+            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
+            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
+            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
+            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
+            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
           </div>
 
           <div className="text-center md:text-left">

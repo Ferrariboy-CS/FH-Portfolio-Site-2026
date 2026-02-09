@@ -140,7 +140,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} font-sans antialiased relative`}>
-        <AnimatedCodeBackground />
+        {/* <AnimatedCodeBackground /> */}
         <ThemeProvider>
           {children}
         </ThemeProvider>

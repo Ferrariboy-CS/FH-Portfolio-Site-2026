@@ -6,6 +6,7 @@ import Image from 'next/image'
 type TabType = 'education' | 'certifications' | 'experience' | 'awards'
 
 const certificates = [
+  { title: 'ISC2 Candidate', org: 'ISC2', date: 'Nov 2025 - Nov 2026', file: '/certifications/ISC2 Candidate.png' },
   { title: 'CyberOps Associate', org: 'University of Namibia through Cisco Networking Academy', date: 'Dec 2025', file: '/certifications/Cyberops.png' },
   { title: 'CCNAv7: Introduction to Networks', org: 'Cisco Networking Academy', date: 'Nov 2022', file: '/certifications/Introduction to networks.jpg' },
   { title: 'Cybersecurity Essentials', org: 'Cisco Networking Academy', date: 'Oct 2022', file: '/certifications/cybersecurity essentials.jpg' },
@@ -84,6 +85,18 @@ export default function Qualification() {
 
           {activeTab === 'experience' && (
             <div className="grid gap-6 max-w-2xl mx-auto">
+              <div className="bg-surface border border-border rounded-xl p-5 shadow-card">
+                <h3 className="text-normal font-medium mb-1">Web Developer (Part-time)</h3>
+                <span className="text-small text-text-subtle block mb-2">Gongo Graphic Design CC</span>
+                <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
+                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Oct 2025 – Present
+                </div>
+                <ul className="text-small text-text-base space-y-1.5 list-disc list-inside">
+                  <li>Building responsive, user-friendly websites and applications</li>
+                  <li>Creating clean UI designs and optimized web solutions</li>
+                  <li>Delivering high-performance web experiences</li>
+                </ul>
+              </div>
               <div className="bg-surface border border-border rounded-xl p-5 shadow-card">
                 <h3 className="text-normal font-medium mb-1">ICT Support Technician (Intern)</h3>
                 <span className="text-small text-text-subtle block mb-2">Unikela Enterprise CC</span>
