@@ -31,7 +31,7 @@ export default function Home() {
           <div className="profile-card mx-auto md:order-1 md:justify-self-center">
             <div className="profile-card__image">
               <Image
-                src="/Propic.png"
+                src="https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321259/Fessy_Grad_-_02_zpc93d.jpg"
                 alt="Festus Helao Shatipamba"
                 fill
                 priority

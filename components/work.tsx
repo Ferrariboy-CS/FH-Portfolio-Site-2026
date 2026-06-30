@@ -8,7 +8,11 @@ type Category = 'All' | 'App' | 'Web'
 const projectsData = [
   {
     id: 1,
-    images: ['/portfolio/AppScreenshot3.png', '/portfolio/AppScreenshot1.jpg', '/portfolio/AppScreenshot2.jpg'],
+    images: [
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318137/AppScreenshot3_lign9n.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318134/AppScreenshot1_na2fq1.jpg',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318134/AppScreenshot2_vjo68a.jpg',
+    ],
     title: 'PumpTrack',
     category: 'App' as Category,
     description: 'Borehole pump tracking mobile application created using Flutter, Dart, Firebase, and Android Studio.',
@@ -18,19 +22,12 @@ const projectsData = [
   {
     id: 2,
     images: [
-      '/portfolio/GGD Home Banner.png',
-      '/portfolio/GGD About Us.png',
-      '/portfolio/GGD About.png',
-      '/portfolio/GGD Service.png',
-      '/portfolio/GGD Portfolio.png',
-      '/portfolio/GGD Testimonials.png',
-      '/portfolio/GGD Contact.png',
-      '/portfolio/GGD Why Choose Us.png',
-      '/portfolio/GGD All Work.png',
-      '/portfolio/GGD Countdown.png',
-      '/portfolio/GGD Countdown2.png',
-      '/portfolio/GGD Hero Section.png',
-      '/portfolio/GGD Footer.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648628/GGD_Home_Banner_t3pzrl.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648627/GGD_Hero_Section_nfymlr.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648627/GGD_Countdown2_rwvgfs.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648626/GGD_Contact_j475ne.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648625/GGD_About_Us_eyadkc.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1770648634/GGD_Why_Choose_Us_agw9qz.png',
     ],
     title: 'Gongo Graphic Design',
     category: 'Web' as Category,
@@ -40,7 +37,13 @@ const projectsData = [
   },
   {
     id: 3,
-    images: ['/portfolio/Robert.png', '/portfolio/robert 2.png', '/portfolio/robert 3.png', '/portfolio/robert 4.png', '/portfolio/robert 5.png'],
+    images: [
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318137/Robert_r50ovg.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318137/robert_3_s8vc85.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318135/robert_2_dzqbmn.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318135/robert_5_loy9jy.png',
+      'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768318135/robert_4_iaf0ue.png',
+    ],
     title: 'Chief Robert Andreas',
     category: 'Web' as Category,
     description: "Showcasing Robert Andreas's work, events, pictures, and book publications.",

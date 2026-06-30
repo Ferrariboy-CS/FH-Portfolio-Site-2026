@@ -13,11 +13,41 @@ export default function About() {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16">
           <div className="c-glitch mx-auto md:mx-0">
-            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
-            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
-            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
-            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
-            <div className="c-glitch__img" style={{ backgroundImage: "url('/AboutPic.png')" }} />
+            <div
+              className="c-glitch__img"
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321258/Fessy_Grad_-_01_ojzgwh.jpg')",
+              }}
+            />
+            <div
+              className="c-glitch__img"
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321258/Fessy_Grad_-_01_ojzgwh.jpg')",
+              }}
+            />
+            <div
+              className="c-glitch__img"
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321258/Fessy_Grad_-_01_ojzgwh.jpg')",
+              }}
+            />
+            <div
+              className="c-glitch__img"
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321258/Fessy_Grad_-_01_ojzgwh.jpg')",
+              }}
+            />
+            <div
+              className="c-glitch__img"
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dl4ckmwrb/image/upload/v1768321258/Fessy_Grad_-_01_ojzgwh.jpg')",
+              }}
+            />
           </div>
 
           <div className="text-center md:text-left">

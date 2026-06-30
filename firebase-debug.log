@@ -1,0 +1,85 @@
+[debug] [2026-06-30T11:31:39.020Z] ----------------------------------------------------------------------
+[debug] [2026-06-30T11:31:39.022Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\90635\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2026-06-30T11:31:39.022Z] CLI Version:   15.22.3
+[debug] [2026-06-30T11:31:39.022Z] Platform:      win32
+[debug] [2026-06-30T11:31:39.022Z] Node Version:  v24.18.0
+[debug] [2026-06-30T11:31:39.022Z] Detected Agent: github_copilot_vscode_agent
+[debug] [2026-06-30T11:31:39.022Z] Time:          Tue Jun 30 2026 13:31:39 GMT+0200 (Central Africa Time)
+[debug] [2026-06-30T11:31:39.022Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-30T11:31:39.800Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-30T11:31:39.800Z] > authorizing via signed-in user (festushelaoshatipamba@gmail.com)
+[debug] [2026-06-30T11:31:39.801Z] [iam] checking project fhshatipamba-portfolio-2024 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-30T11:31:39.801Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:39.801Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:39.802Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fhshatipamba-portfolio-2024:testIamPermissions [none]
+[debug] [2026-06-30T11:31:39.802Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fhshatipamba-portfolio-2024:testIamPermissions  x-goog-user-project=fhshatipamba-portfolio-2024
+[debug] [2026-06-30T11:31:39.802Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fhshatipamba-portfolio-2024:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-30T11:31:41.989Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fhshatipamba-portfolio-2024:testIamPermissions 200
+[debug] [2026-06-30T11:31:41.989Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fhshatipamba-portfolio-2024:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-30T11:31:41.990Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:41.990Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:41.990Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024 [none]
+[debug] [2026-06-30T11:31:42.707Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024 200
+[debug] [2026-06-30T11:31:42.708Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024 {"projectId":"fhshatipamba-portfolio-2024","projectNumber":"57375362568","displayName":"FHShatipamba Portfolio 2024","name":"projects/fhshatipamba-portfolio-2024","resources":{"hostingSite":"fhshatipamba-portfolio-2024"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_c4590da6-b68f-481a-b001-27de35b8d1af"}
+[info] 
+[info] === Deploying to 'fhshatipamba-portfolio-2024'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-30T11:31:42.712Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:42.712Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:42.713Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024/sites/fhshatipamba-portfolio-2024 [none]
+[debug] [2026-06-30T11:31:45.258Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024/sites/fhshatipamba-portfolio-2024 200
+[debug] [2026-06-30T11:31:45.258Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/fhshatipamba-portfolio-2024/sites/fhshatipamba-portfolio-2024 {"name":"projects/fhshatipamba-portfolio-2024/sites/fhshatipamba-portfolio-2024","defaultUrl":"https://fhshatipamba-portfolio-2024.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-06-30T11:31:45.259Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:45.259Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:45.259Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions [none]
+[debug] [2026-06-30T11:31:45.259Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-30T11:31:47.181Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions 200
+[debug] [2026-06-30T11:31:47.181Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions {"name":"projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[fhshatipamba-portfolio-2024]: beginning deploy... 
+[info] i  hosting[fhshatipamba-portfolio-2024]: found 16 files in build 
+[debug] [2026-06-30T11:31:47.190Z] [hosting] uploading with 200 concurrency
+[debug] [2026-06-30T11:31:47.192Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:47.192Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:47.193Z] [hosting] hash cache [YnVpbGQ] stored for 16 files
+[debug] [2026-06-30T11:31:47.193Z] [hosting][hash queue][FINAL] {"max":1,"min":1,"avg":1,"active":0,"complete":16,"success":16,"errored":0,"retried":0,"total":16,"elapsed":2}
+[debug] [2026-06-30T11:31:47.193Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92:populateFiles [none]
+[debug] [2026-06-30T11:31:47.193Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92:populateFiles {"files":{"/robots.txt":"b2090cf9761ef60aa06e4fab97679bd43dfa5e5df073701ead5879d7c68f1ec5","/manifest.json":"4368aeaf848ae2e048765562c289452f33ad2a175c4b1951ea8bdf2ada0d5b10","/index.html":"5971edbd3febe3b0aa55b631150cd9b797ae2dff7e6eaa665c807bed101fab97","/asset-manifest.json":"f753183bdb41e0b7a30405f8799ef770eee2d1caa9932226c688e8851333cf51","/404.html":"41d1e074106979fb6591ec6953bfe5ace2788be22f0ed4189bd54905ebb5b44d","/static/media/CV.6ce8268c905efc05039a.pdf":"5a744f2db711e77daa23016007cd59f97d9bbb9f1579bbfd2d98e21b19f95b87","/static/js/main.864ec0ba.js.map":"c692f41771f6d860e78ffeaec3191dab135b14d9cfa37d70e25d6807e8ad3c9b","/static/js/main.864ec0ba.js.LICENSE.txt":"e923871cce9a3c6156cb282424fe267912af85b3caeef18426a71afac3e3e674","/static/js/main.864ec0ba.js":"e7514bab9dd8b0e13b1dfd3dace6f82a60e98c9113ef74f72f537f8fff64f5f6","/static/css/main.b2ff32cb.css.map":"fb5e961787e85eed249b1ba78856a4b70eec6bf63723ab65b43c22fbdd83c353","/static/css/main.b2ff32cb.css":"a5dce16d62a1f91cfcf5ce54d34ccba52ad8009118ec7094c0363c9eb7ba0699","/skills/javascript.svg":"20af66b2ab8f816baf8d3a9138ffe6fb6935631fc33774470d834d07aa588105","/skills/html.svg":"4f7f06f1e4c15e842ac73ae5cccc9b59ee28b6f4d981ed952b2086246f75e8b0","/skills/firebase.svg":"bc6bee6ae6242a1e6b9a059eb4cc5d7a5b5161c5be53a3513de7e9eee4de631a","/skills/css.svg":"c2f749be7fa8b85aff506b20e58723717f993cc7286ca5e9dc5ec87cc027a058","/certifications/Festus Helao Shatipamba.pdf":"09cfdf02c7c5a38450ca1acb98eaf5629ee9999146dfc100bbb9ad87bd5a0cba"}}
+[debug] [2026-06-30T11:31:48.213Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92:populateFiles 200
+[debug] [2026-06-30T11:31:48.213Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92/files"}
+[debug] [2026-06-30T11:31:48.213Z] [hosting][populate queue][FINAL] {"max":1021,"min":1021,"avg":1021,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1021}
+[debug] [2026-06-30T11:31:48.213Z] [hosting] uploads queued: 0
+[debug] [2026-06-30T11:31:48.213Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1782819108213}
+[info] i  hosting: upload complete 
+[info] +  hosting[fhshatipamba-portfolio-2024]: file upload complete 
+[debug] [2026-06-30T11:31:48.214Z] [hosting] deploy completed after 1031ms
+[debug] [2026-06-30T11:31:48.214Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "fhshatipamba-portfolio-2024"
+    },
+    "version": "projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92"
+  }
+]
+[info] i  hosting[fhshatipamba-portfolio-2024]: finalizing version... 
+[debug] [2026-06-30T11:31:48.214Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:48.215Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:48.215Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92 updateMask=status%2Cconfig
+[debug] [2026-06-30T11:31:48.215Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92 {"status":"FINALIZED","config":{}}
+[debug] [2026-06-30T11:31:49.961Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92 200
+[debug] [2026-06-30T11:31:49.961Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92 {"name":"projects/57375362568/sites/fhshatipamba-portfolio-2024/versions/dd3e86a4cc0f7c92","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-30T11:31:45.809577Z","createUser":{"email":"festushelaoshatipamba@gmail.com"},"finalizeTime":"2026-06-30T11:31:49.561827Z","finalizeUser":{"email":"festushelaoshatipamba@gmail.com"}}
+[debug] [2026-06-30T11:31:49.961Z] [hosting] finalized version for fhshatipamba-portfolio-2024:[object Object]
+[info] +  hosting[fhshatipamba-portfolio-2024]: version finalized 
+[info] i  hosting[fhshatipamba-portfolio-2024]: releasing new version... 
+[debug] [2026-06-30T11:31:49.962Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:49.963Z] Checked if tokens are valid: true, expires at: 1782822043601
+[debug] [2026-06-30T11:31:49.963Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/channels/live/releases versionName=projects%2F57375362568%2Fsites%2Ffhshatipamba-portfolio-2024%2Fversions%2Fdd3e86a4cc0f7c92
+[debug] [2026-06-30T11:31:49.963Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/channels/live/releases {}
+[debug] [2026-06-30T11:31:52.199Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/fhshatipamba-portfolio-2024/channels/live/releases 200

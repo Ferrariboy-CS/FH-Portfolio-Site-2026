@@ -6,19 +6,19 @@ import Image from 'next/image'
 type TabType = 'education' | 'certifications' | 'experience' | 'awards'
 
 const certificates = [
-  { title: 'ISC2 Candidate', org: 'ISC2', date: 'Nov 2025 - Nov 2026', file: '/certifications/ISC2 Candidate.png' },
-  { title: 'CyberOps Associate', org: 'University of Namibia through Cisco Networking Academy', date: 'Dec 2025', file: '/certifications/Cyberops.png' },
-  { title: 'CCNAv7: Introduction to Networks', org: 'Cisco Networking Academy', date: 'Nov 2022', file: '/certifications/Introduction to networks.jpg' },
-  { title: 'Cybersecurity Essentials', org: 'Cisco Networking Academy', date: 'Oct 2022', file: '/certifications/cybersecurity essentials.jpg' },
-  { title: 'PCAP - Programming Essentials in Python', org: 'Cisco Networking Academy Partner', date: 'Dec 2023', file: '/certifications/programming essentials in python.jpg' },
-  { title: 'JavaScript Essentials 1 (JSE)', org: 'Cisco Networking Academy Partner', date: 'Dec 2023', file: '/certifications/javascript essentials 1.jpg' },
-  { title: 'Network Defense', org: 'Cisco Networking Academy', date: 'Apr 2025', file: '/certifications/network defence.jpg' },
-  { title: 'Endpoint Security', org: 'Cisco Networking Academy', date: 'Apr 2025', file: '/certifications/endpoint security.jpg' },
-  { title: 'Ethical Hacker', org: 'Cisco Networking Academy', date: 'Apr 2025', file: '/certifications/ethical hacker.jpg' },
+  { title: 'ISC2 Candidate', org: 'ISC2', date: 'Nov 2025 - Nov 2026', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734353/ISC2_Candidate_ieawcg.png' },
+  { title: 'CyberOps Associate', org: 'University of Namibia through Cisco Networking Academy', date: 'Dec 2025', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734350/Cyberops_ivfdb3.png' },
+  { title: 'CCNAv7: Introduction to Networks', org: 'Cisco Networking Academy', date: 'Nov 2022', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734353/Introduction_to_networks_qtxqss.jpg' },
+  { title: 'Cybersecurity Essentials', org: 'Cisco Networking Academy', date: 'Oct 2022', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734351/cybersecurity_essentials_khyon6.jpg' },
+  { title: 'PCAP - Programming Essentials in Python', org: 'Cisco Networking Academy Partner', date: 'Dec 2023', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734357/programming_essentials_in_python_ydv9n0.jpg' },
+  { title: 'JavaScript Essentials 1 (JSE)', org: 'Cisco Networking Academy Partner', date: 'Dec 2023', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734355/javascript_essentials_1_hvlla5.jpg' },
+  { title: 'Network Defense', org: 'Cisco Networking Academy', date: 'Apr 2025', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734355/network_defence_alihpw.jpg' },
+  { title: 'Endpoint Security', org: 'Cisco Networking Academy', date: 'Apr 2025', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734352/endpoint_security_w7athh.jpg' },
+  { title: 'Ethical Hacker', org: 'Cisco Networking Academy', date: 'Apr 2025', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734353/ethical_hacker_houg8p.jpg' },
 ]
 
 const awards = [
-  { title: 'Business in Africa - The Age of Digitalization', org: 'The Hague University of Applied Sciences and UNAM - Explored Africa\'s evolving business landscape with focus on blockchain.', date: '2025', file: '/certifications/Festus Helao Shatipamba.jpg' },
+  { title: 'Business in Africa - The Age of Digitalization', org: 'The Hague University of Applied Sciences and UNAM - Explored Africa\'s evolving business landscape with focus on blockchain.', date: '2025', file: 'https://res.cloudinary.com/dl4ckmwrb/image/upload/v1782734377/Festus_Helao_Shatipamba_ubouvl.jpg' },
 ]
 
 const education = [
@@ -86,6 +86,25 @@ export default function Qualification() {
           {activeTab === 'experience' && (
             <div className="grid gap-6 max-w-2xl mx-auto">
               <div className="bg-surface border border-border rounded-xl p-5 shadow-card">
+                <h3 className="text-normal font-medium mb-1">Desktop Support Technician (Intern)</h3>
+                <span className="text-small text-text-subtle block mb-2">City Of Windhoek</span>
+                <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
+                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Feb 2026 – Present
+                </div>
+                <ul className="text-small text-text-base space-y-1.5 list-disc list-inside">
+                  <li>Deliver first-line and second-line technical support by troubleshooting hardware, software, and network issues</li>
+                  <li>Install, configure, and upgrade Windows operating systems and enterprise applications, including Microsoft Office 365 (Outlook and Teams)</li>
+                  <li>Perform system diagnostics, driver updates, and hardware maintenance (SSDs, RAM, peripherals)</li>
+                  <li>Deploy and configure Windows OS images for new and existing machines</li>
+                  <li>Support remote users using Remote Desktop Protocol (RDP) and other remote access tools</li>
+                  <li>Manage and resolve support tickets efficiently using ManageEngine ServiceDesk Plus</li>
+                  <li>Install, configure, and maintain computer hardware and network systems</li>
+                  <li>Assist in setting up and troubleshooting network connectivity issues</li>
+                  <li>Collaborate with Network and Server teams to resolve escalated technical issues</li>
+                  <li>Install Virtual Desktop Infrastructure (VDI) solutions using Inuvika</li>
+                </ul>
+              </div>
+              <div className="bg-surface border border-border rounded-xl p-5 shadow-card">
                 <h3 className="text-normal font-medium mb-1">Web Developer (Part-time)</h3>
                 <span className="text-small text-text-subtle block mb-2">Gongo Graphic Design CC</span>
                 <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
@@ -101,7 +120,7 @@ export default function Qualification() {
                 <h3 className="text-normal font-medium mb-1">ICT Support Technician (Intern)</h3>
                 <span className="text-small text-text-subtle block mb-2">Unikela Enterprise CC</span>
                 <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
-                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Nov 2024 – Nov 2025
+                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Jan 2023 – Nov 2025
                 </div>
                 <ul className="text-small text-text-base space-y-1.5 list-disc list-inside">
                   <li>Setting up new computers and configuring hardware</li>
