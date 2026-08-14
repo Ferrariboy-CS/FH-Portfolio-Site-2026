@@ -86,7 +86,7 @@ export default function Qualification() {
           {activeTab === 'experience' && (
             <div className="grid gap-6 max-w-2xl mx-auto">
               <div className="bg-surface border border-border rounded-xl p-5 shadow-card">
-                <h3 className="text-normal font-medium mb-1">Desktop Support Technician (Intern)</h3>
+                <h3 className="text-normal font-medium mb-1">Desktop Engineer (Intern)</h3>
                 <span className="text-small text-text-subtle block mb-2">City Of Windhoek</span>
                 <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
                   <i className="uil uil-calendar-alt" aria-hidden="true" /> Feb 2026 – Present
@@ -108,7 +108,7 @@ export default function Qualification() {
                 <h3 className="text-normal font-medium mb-1">Web Developer (Part-time)</h3>
                 <span className="text-small text-text-subtle block mb-2">Gongo Graphic Design CC</span>
                 <div className="text-small text-text-subtle mb-4 flex items-center gap-1">
-                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Oct 2025 – Present
+                  <i className="uil uil-calendar-alt" aria-hidden="true" /> Oct 2025 – Jun 2026
                 </div>
                 <ul className="text-small text-text-base space-y-1.5 list-disc list-inside">
                   <li>Building responsive, user-friendly websites and applications</li>
