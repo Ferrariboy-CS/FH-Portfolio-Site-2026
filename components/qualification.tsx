@@ -22,8 +22,30 @@ const awards = [
 ]
 
 const education = [
-  { title: 'Bachelor of Computer Science (Honours)', org: 'University of Namibia', date: '2025' },
-  { title: 'Grade 12 NSSC Certificate', org: 'J.G Van Der Wath Secondary School', date: '2017' },
+  {
+    title: 'Master of Science (MSc), Cybersecurity',
+    org: 'University of Namibia (UNAM)',
+    date: '2026 - 2027',
+    grade: 'Grade: Level 9',
+    summary:
+      'Currently pursuing a Master of Science (MSc) in Cybersecurity with a focus on cryptography, penetration testing, malware analysis, and digital forensics.',
+    highlights: [
+      'Cryptography and Network Security',
+      'Penetration Testing and Ethical Hacking',
+      'Malware Analysis and Defence',
+      'Digital Forensics',
+      'Cybersecurity Risk and Protection Strategies',
+    ],
+  },
+  {
+    title: 'BSc in Computer Science (Honours), Computer Science',
+    org: 'University of Namibia',
+    date: '2019 - 2025',
+    grade: 'Grade: Level 8',
+    summary: 'Activities and societies: Chess Club Member',
+    thesis:
+      'Mini Thesis Title: MOBILE APPLICATION FOR TRACKING BOREHOLE PUMPS IN REALTIME USING GPS IN OKONGO CONSTITUENCY',
+  },
 ]
 
 const tabs: { id: TabType; icon: string; label: string }[] = [
@@ -70,7 +92,26 @@ export default function Qualification() {
           {activeTab === 'education' && (
             <div className="grid gap-6 sm:grid-cols-2">
               {education.map((item, idx) => (
-                <Card key={idx} {...item} />
+                <div key={idx} className="bg-surface border border-border rounded-xl p-5 shadow-card">
+                  <h3 className="text-normal font-medium mb-1">{item.title}</h3>
+                  <span className="text-small text-text-subtle block mb-2">{item.org}</span>
+                  <div className="text-small text-text-subtle mb-3 flex items-center gap-1">
+                    <i className="uil uil-calendar-alt" aria-hidden="true" /> {item.date}
+                  </div>
+                  {item.grade && <p className="text-small text-text-base mb-3">{item.grade}</p>}
+                  {item.summary && <p className="text-small text-text-base mb-3 leading-6">{item.summary}</p>}
+                  {Array.isArray(item.highlights) && item.highlights.length > 0 && (
+                    <>
+                      <p className="text-small text-text-base mb-2">Key areas of study include:</p>
+                      <ul className="text-small text-text-base space-y-1.5 list-disc list-inside">
+                        {item.highlights.map((highlight) => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                  {item.thesis && <p className="text-small text-text-base mt-3 leading-6">{item.thesis}</p>}
+                </div>
               ))}
             </div>
           )}

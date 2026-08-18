@@ -1,7 +1,7 @@
 const infoItems = [
-  { icon: 'bx-award', title: 'Experience', subtitle: '+ 4 years' },
-  { icon: 'bx-briefcase-alt', title: 'Completed', subtitle: '3+ Projects' },
-  { icon: 'bx-support', title: 'Support', subtitle: 'Online 24/7' },
+  { icon: 'bx-award', title: 'Experience', subtitle: '3+ roles' },
+  { icon: 'bx-book-open', title: 'Education', subtitle: 'MSc Cybersecurity' },
+  { icon: 'bx-briefcase-alt', title: 'Projects', subtitle: '3+ completed' },
 ]
 
 export default function About() {
@@ -65,10 +65,10 @@ export default function About() {
             </div>
 
             <p className="text-text-base mb-8 md:pr-8 lg:pr-16">
-              I&apos;m a Computer Science graduate driven by a passion for coding, problem-solving, and technology. 
-              I enjoy turning complex challenges into innovative, real-world solutions while constantly exploring 
-              new tools and technologies. Outside of tech, I&apos;m an avid chess player and a Formula 1 enthusiast 
-              who thrives on strategy, precision, and performance—both on the board and in code.
+              I&apos;m a Computer Science graduate and current MSc Cybersecurity student at the University of Namibia, 
+              focused on building secure, practical technology solutions. My experience spans web development, IT support, 
+              and desktop engineering, with a strong interest in cryptography, penetration testing, malware analysis, and digital forensics.
+              Outside of tech, I&apos;m an avid chess player and a Formula 1 enthusiast who values strategy, precision, and performance.
             </p>
 
             <a href="/CV.pdf" download className="btn">
