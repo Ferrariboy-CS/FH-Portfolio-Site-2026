@@ -4,9 +4,9 @@ import { FiMail, FiArrowUp } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = "service_nzjh9un";
-const TEMPLATE_ID = "template_aohjt1o";
-const PUBLIC_KEY  = "jLiKmgBt3Y2VmXhYX";
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -14,6 +14,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setStatus({
+        type: "error",
+        msg: "EmailJS is not configured. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY.",
+      });
+      return;
+    }
     setStatus({ type: "loading", msg: "Sending..." });
 
     try {
@@ -22,7 +29,14 @@ const Contact = () => {
       formRef.current.reset();
     } catch (err) {
       console.error(err);
-      setStatus({ type: "error", msg: "Oops, something went wrong. Please try again." });
+      const errorText = typeof err?.text === "string" ? err.text : typeof err?.message === "string" ? err.message : "";
+      const errorMsg = errorText.includes("service ID not found")
+        ? "EmailJS service ID not found. Update NEXT_PUBLIC_EMAILJS_SERVICE_ID to match your EmailJS dashboard."
+        : errorText
+          ? `Error: ${errorText}`
+          : "Oops, something went wrong. Please try again.";
+
+      setStatus({ type: "error", msg: errorMsg });
     }
   };
 

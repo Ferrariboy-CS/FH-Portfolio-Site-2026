@@ -5,9 +5,9 @@ import { FiMail, FiArrowUp } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
-const SERVICE_ID = 'service_xebm82j'
-const TEMPLATE_ID = 'template_aohjt1o'
-const PUBLIC_KEY = 'jLiKmgBt3Y2VmXhYX'
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
 
 type Status = { type: 'idle' | 'loading' | 'success' | 'error'; msg: string }
 
@@ -23,6 +23,14 @@ export default function Contact() {
       return
     }
 
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setStatus({
+        type: 'error',
+        msg: 'EmailJS is not configured. Set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY.',
+      })
+      return
+    }
+
     setStatus({ type: 'loading', msg: 'Sending...' })
 
     try {
@@ -32,9 +40,7 @@ export default function Contact() {
         timeInput.value = new Date().toLocaleString()
       }
 
-      console.log('Sending email with EmailJS...', { SERVICE_ID, TEMPLATE_ID })
       const result = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
-      console.log('EmailJS result:', result)
       
       if (result.status === 200 || result.text === 'OK') {
         setStatus({ type: 'success', msg: 'Thanks! Your message has been sent.' })
@@ -48,24 +54,15 @@ export default function Contact() {
       }
     } catch (err: any) {
       console.error('EmailJS Error:', err)
-      // Provide more detailed error message
-      let errorMsg = 'Oops, something went wrong. Please try again.'
-      
-      if (err?.text) {
-        errorMsg = err.text
-        // Check for Gmail API errors
-        if (err.text.includes('Gmail_API') || err.text.includes('Invalid grant')) {
-          errorMsg = 'Email service needs reconnection. Please contact the site administrator.'
-        } else {
-          errorMsg = `Error: ${err.text}`
-        }
-      } else if (err?.message) {
-        errorMsg = `Error: ${err.message}`
-      } else if (err?.status) {
-        errorMsg = `Error ${err.status}: Failed to send message`
-      }
-      
-      setStatus({ type: 'error', msg: errorMsg })
+
+      const errorText = typeof err?.text === 'string' ? err.text : typeof err?.message === 'string' ? err.message : ''
+      const errorMsg = errorText.includes('service ID not found')
+        ? 'EmailJS service ID not found. Update NEXT_PUBLIC_EMAILJS_SERVICE_ID to match your EmailJS dashboard.'
+        : errorText
+          ? `Error: ${errorText}`
+          : `Error ${typeof err?.status === 'number' ? err.status : ''}: Failed to send message`
+
+      setStatus({ type: 'error', msg: errorMsg || 'Oops, something went wrong. Please try again.' })
     }
   }
 
