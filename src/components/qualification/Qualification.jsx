@@ -72,14 +72,28 @@ const awards = [
 
 const education = [
   {
-    title: "Bachelor of Computer Science (Honours)",
-    org: "University of Namibia",
-    date: "2025",
+    title: "Master of Science (MSc), Cybersecurity",
+    org: "University of Namibia (UNAM)",
+    date: "2026 - 2027",
+    grade: "Grade: Level 9",
+    summary:
+      "Currently pursuing a Master of Science (MSc) in Cybersecurity with a focus on cryptography, penetration testing, malware analysis, and digital forensics.",
+    highlights: [
+      "Cryptography and Network Security",
+      "Penetration Testing and Ethical Hacking",
+      "Malware Analysis and Defence",
+      "Digital Forensics",
+      "Cybersecurity Risk and Protection Strategies",
+    ],
   },
   {
-    title: "Grade 12 NSSC Certificate",
-    org: "J.G Van Der Wath Secondary School",
-    date: "2017",
+    title: "BSc in Computer Science (Honours), Computer Science",
+    org: "University of Namibia",
+    date: "2019 - 2025",
+    grade: "Grade: Level 8",
+    summary: "Activities and societies: Chess Club Member",
+    thesis:
+      "Mini Thesis Title: MOBILE APPLICATION FOR TRACKING BOREHOLE PUMPS IN REALTIME USING GPS IN OKONGO CONSTITUENCY",
   },
 ];
 
@@ -112,6 +126,29 @@ const Qualification = () => {
                 <div className="qualification__calendar">
                   <i className="uil uil-calendar-alt"></i> {item.date}
                 </div>
+                {item.grade && (
+                  <p style={{ fontSize: "0.95rem", marginTop: "0.75rem", marginBottom: "0.75rem" }}>{item.grade}</p>
+                )}
+                {item.summary && (
+                  <p style={{ fontSize: "0.95rem", marginTop: 0, marginBottom: "0.75rem", lineHeight: "1.5" }}>
+                    {item.summary}
+                  </p>
+                )}
+                {Array.isArray(item.highlights) && item.highlights.length > 0 && (
+                  <>
+                    <p style={{ fontSize: "0.95rem", marginTop: 0, marginBottom: "0.75rem" }}>Key areas of study include:</p>
+                    <ul style={{ fontSize: "0.95rem", lineHeight: "1.6", paddingLeft: "1.25rem", margin: 0 }}>
+                      {item.highlights.map((highlight) => (
+                        <li key={highlight} style={{ marginBottom: "0.5rem" }}>{highlight}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                {item.thesis && (
+                  <p style={{ fontSize: "0.95rem", marginTop: "0.75rem", marginBottom: 0, lineHeight: "1.5" }}>
+                    {item.thesis}
+                  </p>
+                )}
                 {withButton && item.file && (
                   <button
                     className="button qualification__view-btn"
