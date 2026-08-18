@@ -68,7 +68,7 @@ export default function About() {
               I&apos;m a Computer Science graduate and current MSc Cybersecurity student at the University of Namibia, 
               focused on building secure, practical technology solutions. My experience spans web development, IT support, 
               and desktop engineering, with a strong interest in cryptography, penetration testing, malware analysis, and digital forensics.
-              Outside of tech, I&apos;m an avid chess player and a Formula 1 enthusiast who values strategy, precision, and performance.
+              Outside of tech, I&apos;m an avid chess player and a Formula 1 enthusiast.
             </p>
 
             <a href="/CV.pdf" download className="btn">
